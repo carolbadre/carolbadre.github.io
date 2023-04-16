@@ -44,7 +44,8 @@ nav a {
 }
 
 nav a:hover {
-	background-color: #9687ad;
+	background-color: 
+		var(--random-bg-color); /* Set the background color to a random value */
 	color: #75648c;
 }
 
@@ -61,61 +62,61 @@ section {
 }
 
 footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #eaf2e9;
-  padding: 1em;
-  text-align: center;
-  border-top: 2px solid #ddd;
-  position: relative;
-  height: 80px; /* Set the height of the footer to accommodate the image */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #eaf2e9;
+	padding: 1em;
+	text-align: center;
+	border-top: 2px solid #ddd;
+	position: relative;
+	height: 80px; /* Set the height of the footer to accommodate the image */
 }
 
 footer p {
-  margin: 0;
+	margin: 0;
 }
 
 footer img {
-  height: 60px; /* Set the height of the image */
-  width: auto; /* Allow the width to adjust proportionally to the height */
-  margin: 5px; /* Add some margin to the image */
+	height: 60px; /* Set the height of the image */
+	width: auto; /* Allow the width to adjust proportionally to the height */
+	margin: 5px; /* Add some margin to the image */
 }
 
 /* Randomly choose background color for each page load */
 @keyframes random-bg {
 	0% {
-		background-color: #eaebf5;
+		--random-bg-color: #b8c4c6;
 	}
 	10% {
-		background-color: #e3f0fa;
+		--random-bg-color: #e6efc9;
 	}
 	20% {
-		background-color: #faf4f7;
+		--random-bg-color: #abb2cc;
 	}
 	30% {
-		background-color: #f7f8fe;
+		--random-bg-color: #b6daf4;
 	}
 	40% {
-		background-color: #f5f8fc;
+		--random-bg-color: #e4cce1;
 	}
 	50% {
-		background-color: #f6f9fd;
+		--random-bg-color: #c0dcb4;
 	}
 	60% {
-		background-color: #f9fbf3;
+		--random-bg-color: #e2b9ae;
 	}
 	70% {
-		background-color: #f5fbf7;
+		--random-bg-color: #b8d0f1;
 	}
 	80% {
-		background-color: #f6f6fe;
+		--random-bg-color: #eed5e0;
 	}
 	90% {
-		background-color: #fcf7fb;
+		--random-bg-color: #d8e2af;
 	}
 	100% {
-		background-color: #fefdf7;
+		--random-bg-color: #ebc6ac;
 	}
 }
 
