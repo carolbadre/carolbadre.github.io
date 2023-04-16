@@ -50,6 +50,7 @@ nav a:hover {
 
 main {
 	margin: 1em;
+	background-color: #eaebf5; /* Default background color */
 }
 
 h2 {
@@ -82,6 +83,46 @@ footer img {
   margin: 5px; /* Add some margin to the image */
 }
 
+/* Randomly choose background color for each page load */
+@keyframes random-bg {
+	0% {
+		background-color: #eaebf5;
+	}
+	10% {
+		background-color: #e3f0fa;
+	}
+	20% {
+		background-color: #faf4f7;
+	}
+	30% {
+		background-color: #f7f8fe;
+	}
+	40% {
+		background-color: #f5f8fc;
+	}
+	50% {
+		background-color: #f6f9fd;
+	}
+	60% {
+		background-color: #f9fbf3;
+	}
+	70% {
+		background-color: #f5fbf7;
+	}
+	80% {
+		background-color: #f6f6fe;
+	}
+	90% {
+		background-color: #fcf7fb;
+	}
+	100% {
+		background-color: #fefdf7;
+	}
+}
+
+body {
+	animation: random-bg 30s infinite;
+}
 
 @media only screen and (max-width: 600px) {
 	nav ul {
