@@ -1,22 +1,18 @@
-:root {
-  --random-bg-color: #f8f8f8;
-}
-
 body {
-  font-family: "Linux Libertine", serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--random-bg-color);
+	font-family: "Linux Libertine", serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f8f8f8;
 }
 
 header {
-  background-color: #fff;
-  border-bottom: 2px solid #ddd;
-  padding: 1em;
+	background-color: #fff;
+	border-bottom: 2px solid #ddd;
+	padding: 1em;
 }
 
 h1 {
-  margin: 0;
+	margin: 0;
 }
 
 nav {
@@ -47,21 +43,144 @@ nav a {
   padding: 0.5em;
 }
 
+/* Randomly choose hover color for each hover */
 nav a:hover {
-  background-color: var(--random-hover-color);
-  color: #75648c;
+  background-color: #b8c4c6;
+}
+nav a:hover:nth-of-type(2) {
+  background-color: #e6efc9;
+}
+nav a:hover:nth-of-type(3) {
+  background-color: #abb2cc;
+}
+nav a:hover:nth-of-type(4) {
+  background-color: #b6daf4;
+}
+nav a:hover:nth-of-type(5) {
+  background-color: #e4cce1;
+}
+nav a:hover:nth-of-type(6) {
+  background-color: #c0dcb4;
+}
+nav a:hover:nth-of-type(7) {
+  background-color: #e2b9ae;
+}
+nav a:hover:nth-of-type(8) {
+  background-color: #b8d0f1;
+}
+nav a:hover:nth-of-type(9) {
+  background-color: #eed5e0;
+}
+nav a:hover:nth-of-type(10) {
+  background-color: #d8e2af;
+}
+nav a:hover:nth-of-type(11) {
+  background-color: #ebc6ac;
+}
+nav a:hover:nth-of-type(12) {
+  background-color: #d7b6b7;
+}
+nav a:hover:nth-of-type(13) {
+  background-color: #f6e8c6;
+}
+nav a:hover:nth-of-type(14) {
+  background-color: #ebf1e6;
+}
+nav a:hover:nth-of-type(15) {
+  background-color: #e7e4f0;
+}
+nav a:hover:nth-of-type(16) {
+  background-color: #dbc6b1;
+}
+nav a:hover:nth-of-type(17) {
+  background-color: #aecf9b;
+}
+nav a:hover:nth-of-type(18) {
+  background-color: #f0cce1;
+}
+nav a:hover:nth-of-type(19) {
+  background-color: #daddea;
+}
+nav a:hover:nth-of-type(20) {
+  background-color: #f8e6e3;
+}
+nav a:hover:nth-of-type(21) {
+  background-color: #f1e8ea;
+}
+nav a:hover:nth-of-type(22) {
+  background-color: #f4d6e8;
+}
+nav a:hover:nth-of-type(23) {
+  background-color: #dff0dc;
+}
+nav a:hover:nth-of-type(24) {
+  background-color: #d1e9fe;
+}
+nav a:hover:nth-of-type(25) {
+  background-color: #dae8f3;
+}
+nav a:hover:nth-of-type(26) {
+  background-color: #eddeea;
+}
+nav a:hover:nth-of-type(27) {
+  background-color: #e3e2ef;
+}
+nav a:hover:nth-of-type(28) {
+  background-color: #d3dbed;
+}
+nav a:hover:nth-of-type(29) {
+  background-color: #e9f1d2;
+}
+nav a:hover:nth-of-type(30) {
+  background-color: #faf9d9;
+}
+nav a:hover:nth-of-type(31) {
+  background-color: #ecd1f0;
+}
+nav a:hover:nth-of-type(32) {
+  background-color: #eee1ec;
+}
+nav a:hover:nth-of-type(33) {
+  background-color: #dee7f8;
+}
+nav a:hover:nth-of-type(34) {
+  background-color: #eec7d5;
+}
+nav a:hover:nth-of-type(35) {
+  background-color: #f3ece3;
+}
+nav a:hover:nth-of-type(36) {
+  background-color: #dcecda;
+}
+nav a:hover:nth-of-type(37) {
+  background-color: #f1f9db;
+}
+nav a:hover:nth-of-type(38) {
+  background-color: #fae7d4;
+}
+nav a:hover:nth-of-type(39) {
+  background-color: #edf9db;
+}
+nav a:hover:nth-of-type(40) {
+  background-color: #d6d7e9;
+}
+nav a:hover:nth-of-type(41) {
+  background-color: #f1ece4;
+}
+nav a:hover:nth-of-type(42) {
+  background-color: #edf5e8;
 }
 
 main {
-  margin: 1em;
+	margin: 1em;
 }
 
 h2 {
-  margin-top: 2em;
+	margin-top: 2em;
 }
 
 section {
-  margin-bottom: 2em;
+	margin-bottom: 2em;
 }
 
 footer {
@@ -73,7 +192,7 @@ footer {
   text-align: center;
   border-top: 2px solid #ddd;
   position: relative;
-  height: 80px;
+  height: 80px; /* Set the height of the footer to accommodate the image */
 }
 
 footer p {
@@ -81,61 +200,64 @@ footer p {
 }
 
 footer img {
-  height: 60px;
-  width: auto;
-  margin: 5px;
+  height: 60px; /* Set the height of the image */
+  width: auto; /* Allow the width to adjust proportionally to the height */
+  margin: 5px; /* Add some margin to the image */
 }
 
 /* Randomly choose background color for each page load */
 @keyframes random-bg {
-  0% {
-    --random-bg-color: #b8c4c6;
-    --random-hover-color: #d7b6b7;
-  }
-  10% {
-    --random-bg-color: #e6efc9;
-    --random-hover-color: #f6e8c6;
-  }
-  20% {
-    --random-bg-color: #abb2cc;
-    --random-hover-color: #ebf1e6;
-  }
-  30% {
-    --random-bg-color: #b6daf4;
-    --random-hover-color: #e7e4f0;
-  }
-  40% {
-    --random-bg-color: #e4cce1;
-    --random-hover-color: #dbc6b1;
-  }
-  50% {
-    --random-bg-color: #c0dcb4;
-    --random-hover-color: #aecf9b;
-  }
-  60% {
-    --random-bg-color: #e2b9ae;
-    --random-hover-color: #f0cce1;
-  }
-  70% {
-    --random-bg-color: #b8d0f1;
-    --random-hover-color: #daddea;
-  }
-  80% {
-    --random-bg-color: #eed5e0;
-    --random-hover-color: #f8e6e3;
-  }
-  90% {
-    --random-bg-color: #d8e2af;
-    --random-hover-color: #f1e8ea;
-  }
-  100% {
-    --random-bg-color: #ebc6ac;
-    --random-hover-color: #f4d6e8;
-  }
+  0% {background-color: #eaebf5;}
+  2.22% {background-color: #e3f0fa;}
+  4.44% {background-color: #faf4f7;}
+  6.67% {background-color: #f7f8fe;}
+  8.89% {background-color: #f5f8fc;}
+  11.11% {background-color: #f6f9fd;}
+  13.33% {background-color: #f9fbf3;}
+  15.56% {background-color: #f5fbf7;}
+  17.78% {background-color: #f6f6fe;}
+  20% {background-color: #fcf7fb;}
+  22.22% {background-color: #fefdf7;}
+  24.44% {background-color: #fcf8f8;}
+  26.67% {background-color: #fbf8fc;}
+  28.89% {background-color: #fdfef4;}
+  31.11% {background-color: #fafaf6;}
+  33.33% {background-color: #fef0ea;}
+  35.56% {background-color: #f9f8ef;}
+  37.78% {background-color: #f4ece5;}
+  40% {background-color: #fdeeea;}
+  42.22% {background-color: #fdf6f5;}
+  44.44% {background-color: #eff5f9;}
+  46.67% {background-color: #f5f3f5;}
+  48.89% {background-color: #fbeeec;}
+  51.11% {background-color: #f9eae7;}
+  53.33% {background-color: #fdfbf0;}
+  55.56% {background-color: #fef6f4;}
+  57.78% {background-color: #fff3ec;}
+  60% {background-color: #fffcf1;}
+  62.22% {background-color: #e8e6fe;}
+  64.44% {background-color: #faf2f1;}
+  66.67% {background-color: #f7ebed;}
+  68.89% {background-color: #f5f0f2;}
+  71.11% {background-color: #f6fcfc;}
+  73.33% {background-color: #f1f0fd;}
+  75.56% {background-color: #f8e8f5;}
+  77.78% {background-color: #fff4eb;}
+  80% {background-color: #fff9eb;}
+  82.22% {background-color: #fffdeb;}
+  84.44% {background-color: #fffdeb;}
+  86.67% {background-color: #fef7e9;}
+  88.89% {background-color: #feffeb;}
+  91.11% {background-color: #fffeeb;}
+  93.33% {background-color: #fffbeb;}
+  95.56% {background-color: #ffefeb;}
+  97.78% {background-color: #fff3eb;}
+  100% {background-color: #eaebf5;}
 }
 
+
 body {
-  animation: random-bg 50s infinite;
+	animation: random-bg 50s infinite;
 }
 
 @media only screen and (max-width: 600px) {
