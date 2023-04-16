@@ -43,132 +43,14 @@ nav a {
   padding: 0.5em;
 }
 
-/* Randomly choose hover color for each hover */
+/* define the available colors for the navigation hover */
+:root {
+  --nav-hover-colors: #b8c4c6, #e6efc9, #abb2cc, #b6daf4, #e4cce1, #c0dcb4, #e2b9ae, #b8d0f1, #eed5e0, #d8e2af, #ebc6ac, #d7b6b7, #f6e8c6, #ebf1e6, #e7e4f0, #dbc6b1, #aecf9b, #f0cce1, #daddea, #f8e6e3, #f1e8ea, #f4d6e8, #dff0dc, #d1e9fe, #dae8f3, #eddeea, #e3e2ef, #d3dbed, #e9f1d2, #faf9d9, #ecd1f0, #eee1ec, #dee7f8, #eec7d5, #f3ece3, #dcecda, #f1f9db, #fae7d4, #edf9db, #d6d7e9, #f1ece4, #edf5e8;
+}
+
+/* set the hover color for the navigation links */
 nav a:hover {
-  background-color: #b8c4c6;
-}
-nav a:hover:nth-of-type(2) {
-  background-color: #e6efc9;
-}
-nav a:hover:nth-of-type(3) {
-  background-color: #abb2cc;
-}
-nav a:hover:nth-of-type(4) {
-  background-color: #b6daf4;
-}
-nav a:hover:nth-of-type(5) {
-  background-color: #e4cce1;
-}
-nav a:hover:nth-of-type(6) {
-  background-color: #c0dcb4;
-}
-nav a:hover:nth-of-type(7) {
-  background-color: #e2b9ae;
-}
-nav a:hover:nth-of-type(8) {
-  background-color: #b8d0f1;
-}
-nav a:hover:nth-of-type(9) {
-  background-color: #eed5e0;
-}
-nav a:hover:nth-of-type(10) {
-  background-color: #d8e2af;
-}
-nav a:hover:nth-of-type(11) {
-  background-color: #ebc6ac;
-}
-nav a:hover:nth-of-type(12) {
-  background-color: #d7b6b7;
-}
-nav a:hover:nth-of-type(13) {
-  background-color: #f6e8c6;
-}
-nav a:hover:nth-of-type(14) {
-  background-color: #ebf1e6;
-}
-nav a:hover:nth-of-type(15) {
-  background-color: #e7e4f0;
-}
-nav a:hover:nth-of-type(16) {
-  background-color: #dbc6b1;
-}
-nav a:hover:nth-of-type(17) {
-  background-color: #aecf9b;
-}
-nav a:hover:nth-of-type(18) {
-  background-color: #f0cce1;
-}
-nav a:hover:nth-of-type(19) {
-  background-color: #daddea;
-}
-nav a:hover:nth-of-type(20) {
-  background-color: #f8e6e3;
-}
-nav a:hover:nth-of-type(21) {
-  background-color: #f1e8ea;
-}
-nav a:hover:nth-of-type(22) {
-  background-color: #f4d6e8;
-}
-nav a:hover:nth-of-type(23) {
-  background-color: #dff0dc;
-}
-nav a:hover:nth-of-type(24) {
-  background-color: #d1e9fe;
-}
-nav a:hover:nth-of-type(25) {
-  background-color: #dae8f3;
-}
-nav a:hover:nth-of-type(26) {
-  background-color: #eddeea;
-}
-nav a:hover:nth-of-type(27) {
-  background-color: #e3e2ef;
-}
-nav a:hover:nth-of-type(28) {
-  background-color: #d3dbed;
-}
-nav a:hover:nth-of-type(29) {
-  background-color: #e9f1d2;
-}
-nav a:hover:nth-of-type(30) {
-  background-color: #faf9d9;
-}
-nav a:hover:nth-of-type(31) {
-  background-color: #ecd1f0;
-}
-nav a:hover:nth-of-type(32) {
-  background-color: #eee1ec;
-}
-nav a:hover:nth-of-type(33) {
-  background-color: #dee7f8;
-}
-nav a:hover:nth-of-type(34) {
-  background-color: #eec7d5;
-}
-nav a:hover:nth-of-type(35) {
-  background-color: #f3ece3;
-}
-nav a:hover:nth-of-type(36) {
-  background-color: #dcecda;
-}
-nav a:hover:nth-of-type(37) {
-  background-color: #f1f9db;
-}
-nav a:hover:nth-of-type(38) {
-  background-color: #fae7d4;
-}
-nav a:hover:nth-of-type(39) {
-  background-color: #edf9db;
-}
-nav a:hover:nth-of-type(40) {
-  background-color: #d6d7e9;
-}
-nav a:hover:nth-of-type(41) {
-  background-color: #f1ece4;
-}
-nav a:hover:nth-of-type(42) {
-  background-color: #edf5e8;
+  color: var(--nav-hover-colors);
 }
 
 main {
