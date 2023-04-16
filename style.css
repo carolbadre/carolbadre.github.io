@@ -206,6 +206,10 @@ footer img {
 }
 
 /* Randomly choose background color for each page load */
+
+body {
+  transition: background-color 50s;
+}
 @keyframes random-bg {
   0% {background-color: #eaebf5;}
   2.22% {background-color: #e3f0fa;}
