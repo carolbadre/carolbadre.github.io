@@ -64,7 +64,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ebf4ea;
+  background-color: #eaf2e9;
   padding: 1em;
   text-align: center;
   border-top: 2px solid #ddd;
@@ -77,9 +77,9 @@ footer p {
 }
 
 footer img {
-  height: 30px; /* Set the height of the image */
+  height: 60px; /* Set the height of the image */
   width: auto; /* Allow the width to adjust proportionally to the height */
-  margin: 10px; /* Add some margin to the image */
+  margin: 5px; /* Add some margin to the image */
 }
 
 
