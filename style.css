@@ -37,15 +37,15 @@ nav li:last-child {
 }
 
 nav a {
-	color: #483c54;
+	color: #75648c;
 	text-decoration: none;
 	font-weight: bold;
 	padding: 0.5em;
 }
 
 nav a:hover {
-	background-color: #75648c;
-	color: #483c54;
+	background-color: #9687ad;
+	color: #75648c;
 }
 
 main {
