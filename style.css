@@ -61,22 +61,27 @@ section {
 }
 
 footer {
-	background-color: #eee;
-	padding: 1em;
-	text-align: center;
-	border-top: 2px solid #c3ddbf;
-	position: relative;
-	height: 100px; /* Set the height of the footer to accommodate the image */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c3ddbf;
+  padding: 1em;
+  text-align: center;
+  border-top: 2px solid #ddd;
+  position: relative;
+  height: 100px; /* Set the height of the footer to accommodate the image */
+}
+
+footer p {
+  margin: 0;
 }
 
 footer img {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	height: 50px; /* Set the height of the image */
-	width: auto; /* Allow the width to adjust proportionally to the height */
-	margin: 10px; /* Add some margin to the image */
+  height: 50px; /* Set the height of the image */
+  width: auto; /* Allow the width to adjust proportionally to the height */
+  margin: 10px; /* Add some margin to the image */
 }
+
 
 @media only screen and (max-width: 600px) {
 	nav ul {
