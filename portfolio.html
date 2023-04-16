@@ -6,9 +6,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="main.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.pdf-preview').magnificPopup({
+        type: 'iframe',
+        iframe: {
+          markup: '<div class="mfp-iframe-scaler">'+
+                    '<div class="mfp-close"></div>'+
+                    '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+                  '</div>'
+        },
+        gallery: {
+          enabled: true
+        }
+      });
+    });
+  </script>
 </head>
-	
-	
 <body>
 	<header>
 		<img src="header.svg" alt="Website Header">
@@ -22,27 +36,25 @@
 			</ul>
 		</nav>
 	</header>
-<main>
-  <ul>
-    <section class="pdf-preview">
-      <h2>Cubings of closed orientable 3-manifolds</h2>
-     <div class="pdf-grid">
-       <a href="cubing_connect_SFS_S3_D40.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_connect_SFS_S3_D40.pdf" width="250" height="200"></iframe></a>
-       <a href="cubing_connect_SFS_S3_D56.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_connect_SFS_S3_D56.pdf" width="250" height="200"></iframe></a>
-       <a href="cubing_connect_sum_rp3.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_connect_sum_rp3.pdf" width="250" height="200"></iframe></a>
-       <a href="cubing_rp3.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_rp3.pdf" width="250" height="200"></iframe></a>
-       <a href="cubing_S2_times_S1.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_S2_times_S1.pdf" width="250" height="200"></iframe></a>
-       <a href="cubing_SFS_3132.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_SFS_3132.pdf" width="250" height="200"></iframe></a>
-     </div>
+	<main>
+	  <ul>
+	    <section class="pdf-preview">
+	      <h2>Cubings of closed orientable 3-manifolds</h2>
+	     <div class="pdf-grid">
+	       <a href="cubing_connect_SFS_S3_D40.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_connect_SFS_S3_D40.pdf" width="250" height="200"></iframe></a>
+	       <a href="cubing_connect_SFS_S3_D56.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_connect_SFS_S3_D56.pdf" width="250" height="200"></iframe></a>
+	       <a href="cubing_connect_sum_rp3.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_connect_sum_rp3.pdf" width="250" height="200"></iframe></a>
+	       <a href="cubing_rp3.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_rp3.pdf" width="250" height="200"></iframe></a>
+	       <a href="cubing_S2_times_S1.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_S2_times_S1.pdf" width="250" height="200"></iframe></a>
+	       <a href="cubing_SFS_3132.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_SFS_3132.pdf" width="250" height="200"></iframe></a>
+	     </div>
 
-    </section>
-  </ul>
-</main>
-</body>
-<footer>
+	    </section>
+	  </ul>
+	</main>
+	<footer>
 		<p>Copyright © 2023</p>
 		<img src="surface.svg" alt="Footer Image">
-
 	</footer>
 </body>
 </html>
