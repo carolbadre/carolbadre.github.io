@@ -8,7 +8,7 @@
     <script src="main.js"></script>
     <script>
       $(document).ready(function() {
-        $('.pdf-preview').magnificPopup({
+        $('.pdf-popup').magnificPopup({
           type: 'iframe',
           iframe: {
             markup: '<div class="mfp-iframe-scaler">'+
@@ -22,6 +22,18 @@
         });
       });
     </script>
+    <style>
+      .pdf-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      
+      .pdf-grid img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -38,57 +50,21 @@
       </nav>
     </header>
     <main>
-      <ul>
-        <section class="pdf-preview">
-          <h2>Cubings of closed orientable 3-manifolds</h2>
-          <div class="pdf-grid">
-            <a href="cubing_connect_SFS_S3_D40.pdf" class="pdf-popup"><img src="01.jpg"></a>
-            <a href="cubing_connect_SFS_S3_D56.pdf" class="pdf-popup"><img src="02.jpg"></a>
-            <a href="cubing_connect_sum_rp3.pdf" class="pdf-popup"><img src="03.jpg"></a>
-            <a href="cubing_rp3.pdf" class="pdf-popup"><img src="04.jpg"></a>
-            <a href="cubing_S2_times_S1.pdf" class="pdf-popup"><img src="05.jpg"></a>
-            <a href="cubing_SFS_3132.pdf" class="pdf-popup"><img src="06.jpg"></a>
-          </div>
-        </section>
-        <style>
-          .pdf-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-          }
-          
-          .pdf-grid img {
-            max-width: 100%;
-            height: auto;
-          }
-        </style>
-      </ul>
+      <section class="pdf-preview">
+        <h2>Cubings of closed orientable 3-manifolds</h2>
+        <div class="pdf-grid">
+          <a href="cubing_connect_SFS_S3_D40.pdf" class="pdf-popup"><img src="01.jpg"></a>
+          <a href="cubing_connect_SFS_S3_D56.pdf" class="pdf-popup"><img src="02.jpg"></a>
+          <a href="cubing_connect_sum_rp3.pdf" class="pdf-popup"><img src="03.jpg"></a>
+          <a href="cubing_rp3.pdf" class="pdf-popup"><img src="04.jpg"></a>
+          <a href="cubing_S2_times_S1.pdf" class="pdf-popup"><img src="05.jpg"></a>
+          <a href="cubing_SFS_3132.pdf" class="pdf-popup"><img src="06.jpg"></a>
+        </div>
+      </section>
     </main>
     <footer>
-      <p>Copyright © 2023</p>
+      <p>&copy; 2023</p>
       <img src="surface.svg" alt="Footer Image">
     </footer>
   </body>
 </html>
-
-
-
-
-
-
-<script>
-  $(document).ready(function() {
-    $('.pdf-popup').magnificPopup({
-      type: 'iframe',
-      iframe: {
-        markup: '<div class="mfp-iframe-scaler">'+
-                  '<div class="mfp-close"></div>'+
-                  '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
-                '</div>'
-      },
-      gallery: {
-        enabled: true
-      }
-    });
-  });
-</script>
