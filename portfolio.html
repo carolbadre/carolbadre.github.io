@@ -43,12 +43,12 @@
 	    <section class="pdf-preview">
 	      <h2>Cubings of closed orientable 3-manifolds</h2>
 	     <div class="pdf-grid">
-	       <a href="cubing_connect_SFS_S3_D40.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_connect_SFS_S3_D40.pdf" width="250" height="200"></iframe></a>
-	       <a href="cubing_connect_SFS_S3_D56.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_connect_SFS_S3_D56.pdf" width="250" height="200"></iframe></a>
-	       <a href="cubing_connect_sum_rp3.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_connect_sum_rp3.pdf" width="250" height="200"></iframe></a>
-	       <a href="cubing_rp3.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_rp3.pdf" width="250" height="200"></iframe></a>
-	       <a href="cubing_S2_times_S1.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_S2_times_S1.pdf" width="250" height="200"></iframe></a>
-	       <a href="cubing_SFS_3132.pdf" target="_blank"><iframe class="pdf-preview" src="cubing_SFS_3132.pdf" width="250" height="200"></iframe></a>
+	       <a href="cubing_connect_SFS_S3_D40.pdf" class="pdf-popup"><img src="cubing_connect_SFS_S3_D40.jpg"></a>
+	       <a href="cubing_connect_SFS_S3_D56.pdf" class="pdf-popup"><img src="cubing_connect_SFS_S3_D56.jpg"></a>
+	       <a href="cubing_connect_sum_rp3.pdf" class="pdf-popup"><img src="cubing_connect_sum_rp3.jpg"></a>
+	       <a href="cubing_rp3.pdf" class="pdf-popup"><img src="cubing_rp3.jpg"></a>
+	       <a href="cubing_S2_times_S1.pdf" class="pdf-popup"><img src="cubing_S2_times_S1.jpg"></a>
+	       <a href="cubing_SFS_3132.pdf" class="pdf-popup"><img src="cubing_SFS_3132.jpg"></a>
 	     </div>
 
 	    </section>
@@ -58,5 +58,10 @@
 		<p>Copyright © 2023</p>
 		<img src="surface.svg" alt="Footer Image">
 	</footer>
-</body>
-</html>
+	<script>
+	  $('.pdf-popup').magnificPopup({
+	    type: 'iframe',
+	    iframe: {
+	      markup: '<div class="mfp-iframe-scaler">'+
+	                '<div class="mfp-close"></div>'+
+	                '<
