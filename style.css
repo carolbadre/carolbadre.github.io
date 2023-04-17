@@ -1,159 +1,89 @@
-body {
-	font-family: "Linux Libertine", serif;
-	margin: 0;
-	padding: 0;
-	background-color: #f8f8f8;
-}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Random Background Color</title>
+	<style>
+		.container {
+			height: 1000px;
+			width: 100%;
+			background-color: #eaebf5;
+			transition: background-color 2s;
+		}
+	</style>
+</head>
+<body>
+	<div class="container"></div>
 
-header {
-	background-color: #fff;
-	border-bottom: 2px solid #ddd;
-	padding: 1em;
-}
+	<script>
+		const colors = [
+			"#eaebf5",
+			"#e3f0fa",
+			"#faf4f7",
+			"#f7f8fe",
+			"#f5f8fc",
+			"#f6f9fd",
+			"#f9fbf3",
+			"#f5fbf7",
+			"#f6f6fe",
+			"#fcf7fb",
+			"#fefdf7",
+			"#fcf8f8",
+			"#fbf8fc",
+			"#fdfef4",
+			"#fafaf6",
+			"#fef0ea",
+			"#f9f8ef",
+			"#f4ece5",
+			"#fdeeea",
+			"#fdf6f5",
+			"#eff5f9",
+			"#f5f3f5",
+			"#fbeeec",
+			"#f9eae7",
+			"#fdfbf0",
+			"#fef6f4",
+			"#fff3ec",
+			"#fffcf1",
+			"#e8e6fe",
+			"#faf2f1",
+			"#f7ebed",
+			"#f5f0f2",
+			"#f6fcfc",
+			"#f1f0fd",
+			"#f8e8f5",
+			"#fff4eb",
+			"#fff9eb",
+			"#fffdeb",
+			"#fffdeb",
+			"#fef7e9",
+			"#feffeb",
+			"#fffeeb",
+			"#fffbeb",
+			"#ffefeb",
+			"#fff3eb"
+		];
 
-h1 {
-	margin: 0;
-}
+		const container = document.querySelector('.container');
+		let colorIndex = 0;
 
-nav {
-  margin-top: 1em;
-}
+		function setColor() {
+			container.style.backgroundColor = colors[colorIndex];
+			colorIndex = (colorIndex + 1) % colors.length;
+		}
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
+		setColor();
 
-nav li {
-  display: inline-block;
-  margin-right: 1em;
-}
+		let sectionCount = 0;
 
-nav li:last-child {
-  margin-right: 0;
-}
-
-nav a {
-  color: #75648c;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5em;
-}
-
-/* define the available colors for the navigation hover */
-:root {
-  --nav-hover-colors: #b8c4c6, #e6efc9, #abb2cc, #b6daf4, #e4cce1, #c0dcb4, #e2b9ae, #b8d0f1, #eed5e0, #d8e2af, #ebc6ac, #d7b6b7, #f6e8c6, #ebf1e6, #e7e4f0, #dbc6b1, #aecf9b, #f0cce1, #daddea, #f8e6e3, #f1e8ea, #f4d6e8, #dff0dc, #d1e9fe, #dae8f3, #eddeea, #e3e2ef, #d3dbed, #e9f1d2, #faf9d9, #ecd1f0, #eee1ec, #dee7f8, #eec7d5, #f3ece3, #dcecda, #f1f9db, #fae7d4, #edf9db, #d6d7e9, #f1ece4, #edf5e8;
-}
-
-/* set the hover color for the navigation links */
-nav a:hover {
-  color: var(--nav-hover-colors);
-}
-
-main {
-	margin: 1em;
-}
-
-h2 {
-	margin-top: 2em;
-}
-
-section {
-	margin-bottom: 2em;
-}
-
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #eaf2e9;
-  padding: 1em;
-  text-align: center;
-  border-top: 2px solid #ddd;
-  position: relative;
-  height: 80px; /* Set the height of the footer to accommodate the image */
-}
-
-footer p {
-  margin: 0;
-}
-
-footer img {
-  height: 60px; /* Set the height of the image */
-  width: auto; /* Allow the width to adjust proportionally to the height */
-  margin: 5px; /* Add some margin to the image */
-}
-
-/* Randomly choose background color for each page load */
-
-
-@keyframes random-bg {
-  0% {background-color: #eaebf5;}
-  2.22% {background-color: #e3f0fa;}
-  4.44% {background-color: #faf4f7;}
-  6.67% {background-color: #f7f8fe;}
-  8.89% {background-color: #f5f8fc;}
-  11.11% {background-color: #f6f9fd;}
-  13.33% {background-color: #f9fbf3;}
-  15.56% {background-color: #f5fbf7;}
-  17.78% {background-color: #f6f6fe;}
-  20% {background-color: #fcf7fb;}
-  22.22% {background-color: #fefdf7;}
-  24.44% {background-color: #fcf8f8;}
-  26.67% {background-color: #fbf8fc;}
-  28.89% {background-color: #fdfef4;}
-  31.11% {background-color: #fafaf6;}
-  33.33% {background-color: #fef0ea;}
-  35.56% {background-color: #f9f8ef;}
-  37.78% {background-color: #f4ece5;}
-  40% {background-color: #fdeeea;}
-  42.22% {background-color: #fdf6f5;}
-  44.44% {background-color: #eff5f9;}
-  46.67% {background-color: #f5f3f5;}
-  48.89% {background-color: #fbeeec;}
-  51.11% {background-color: #f9eae7;}
-  53.33% {background-color: #fdfbf0;}
-  55.56% {background-color: #fef6f4;}
-  57.78% {background-color: #fff3ec;}
-  60% {background-color: #fffcf1;}
-  62.22% {background-color: #e8e6fe;}
-  64.44% {background-color: #faf2f1;}
-  66.67% {background-color: #f7ebed;}
-  68.89% {background-color: #f5f0f2;}
-  71.11% {background-color: #f6fcfc;}
-  73.33% {background-color: #f1f0fd;}
-  75.56% {background-color: #f8e8f5;}
-  77.78% {background-color: #fff4eb;}
-  80% {background-color: #fff9eb;}
-  82.22% {background-color: #fffdeb;}
-  84.44% {background-color: #fffdeb;}
-  86.67% {background-color: #fef7e9;}
-  88.89% {background-color: #feffeb;}
-  91.11% {background-color: #fffeeb;}
-  93.33% {background-color: #fffbeb;}
-  95.56% {background-color: #ffefeb;}
-  97.78% {background-color: #fff3eb;}
-  100% {background-color: #eaebf5;}
-}
-
-body {
-	animation: random-bg 50s infinite;
-}
-
-@media only screen and (max-width: 600px) {
-	nav ul {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	nav li {
-		margin: 0.5em 0;
-	}
-
-	nav li:last-child {
-		margin-bottom: 1em;
-	}
-}
+		window.addEventListener('scroll', function() {
+			if (sectionCount >= 50) {
+				setColor();
+				sectionCount = 0;
+			} else {
+				sectionCount++;
+			}
+		});
+	</script>
+</body>
+</html>
