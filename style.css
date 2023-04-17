@@ -41,7 +41,13 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   padding: 0.5em;
+  background-color: #fff; /* Default background color for the links */
 }
+
+nav a:hover {
+  background-color: #b8c4c6; /* Default hover background color */
+}
+
 
 
 main {
