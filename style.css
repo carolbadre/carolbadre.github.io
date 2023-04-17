@@ -205,62 +205,26 @@ footer img {
   margin: 5px; /* Add some margin to the image */
 }
 
-/* Randomly choose background color for each page load */
-
-
-@keyframes random-bg {
-  0% {background-color: #eaebf5;}
-  2.22% {background-color: #e3f0fa;}
-  4.44% {background-color: #faf4f7;}
-  6.67% {background-color: #f7f8fe;}
-  8.89% {background-color: #f5f8fc;}
-  11.11% {background-color: #f6f9fd;}
-  13.33% {background-color: #f9fbf3;}
-  15.56% {background-color: #f5fbf7;}
-  17.78% {background-color: #f6f6fe;}
-  20% {background-color: #fcf7fb;}
-  22.22% {background-color: #fefdf7;}
-  24.44% {background-color: #fcf8f8;}
-  26.67% {background-color: #fbf8fc;}
-  28.89% {background-color: #fdfef4;}
-  31.11% {background-color: #fafaf6;}
-  33.33% {background-color: #fef0ea;}
-  35.56% {background-color: #f9f8ef;}
-  37.78% {background-color: #f4ece5;}
-  40% {background-color: #fdeeea;}
-  42.22% {background-color: #fdf6f5;}
-  44.44% {background-color: #eff5f9;}
-  46.67% {background-color: #f5f3f5;}
-  48.89% {background-color: #fbeeec;}
-  51.11% {background-color: #f9eae7;}
-  53.33% {background-color: #fdfbf0;}
-  55.56% {background-color: #fef6f4;}
-  57.78% {background-color: #fff3ec;}
-  60% {background-color: #fffcf1;}
-  62.22% {background-color: #e8e6fe;}
-  64.44% {background-color: #faf2f1;}
-  66.67% {background-color: #f7ebed;}
-  68.89% {background-color: #f5f0f2;}
-  71.11% {background-color: #f6fcfc;}
-  73.33% {background-color: #f1f0fd;}
-  75.56% {background-color: #f8e8f5;}
-  77.78% {background-color: #fff4eb;}
-  80% {background-color: #fff9eb;}
-  82.22% {background-color: #fffdeb;}
-  84.44% {background-color: #fffdeb;}
-  86.67% {background-color: #fef7e9;}
-  88.89% {background-color: #feffeb;}
-  91.11% {background-color: #fffeeb;}
-  93.33% {background-color: #fffbeb;}
-  95.56% {background-color: #ffefeb;}
-  97.78% {background-color: #fff3eb;}
-  100% {background-color: #eaebf5;}
-}
-
-
+/* Random background color */
 body {
-	animation: random-bg 50s infinite;
+    background-color: #eaebf5;
+    transition: background-color 0.5s ease-in-out;
 }
+
+/* JavaScript to set random background color */
+<script>
+    var colors = [        "#eaebf5", "#e3f0fa", "#faf4f7", "#f7f8fe", "#f5f8fc",        "#f6f9fd", "#f9fbf3", "#f5fbf7", "#f6f6fe", "#fcf7fb",        "#fefdf7", "#fcf8f8", "#fbf8fc", "#fdfef4", "#fafaf6",        "#fef0ea", "#f9f8ef", "#f4ece5", "#fdeeea", "#fdf6f5",        "#eff5f9", "#f5f3f5", "#fbeeec", "#f9eae7", "#fdfbf0",        "#fef6f4", "#fff3ec", "#fffcf1", "#e8e6fe", "#faf2f1",        "#f7ebed", "#f5f0f2", "#f6fcfc", "#f1f0fd", "#f8e8f5",        "#fff4eb", "#fff9eb", "#fffdeb", "#fffdeb", "#fef7e9",        "#feffeb", "#fffeeb", "#fffbeb", "#ffefeb", "#fff3eb"    ];
+
+    function setBackgroundColor() {
+        var body = document.getElementsByTagName("body")[0];
+        var randomIndex = Math.floor(Math.random() * colors.length);
+        var randomColor = colors[randomIndex];
+        body.style.backgroundColor = randomColor;
+    }
+
+    setBackgroundColor();
+    setInterval(setBackgroundColor, 50000);
+</script>
 
 @media only screen and (max-width: 600px) {
 	nav ul {
