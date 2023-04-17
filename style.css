@@ -16,43 +16,159 @@ h1 {
 }
 
 nav {
-	margin-top: 1em;
+  margin-top: 1em;
 }
 
 nav ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav li {
-	display: inline-block;
-	margin-right: 1em;
+  display: inline-block;
+  margin-right: 1em;
 }
 
 nav li:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 nav a {
-	color: #75648c;
-	text-decoration: none;
-	font-weight: bold;
-	padding: 0.5em;
+  color: #75648c;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em;
 }
 
 /* Randomly choose hover color for each hover */
 nav a:hover {
-	background-color: #b8c4c6;
+  background-color: #b8c4c6;
 }
-
-/* Add hover styles for each nth-of-type */
-@for $i from 2 through 42 {
-  nav a:hover:nth-of-type(#{$i}) {
-    background-color: #{"%06x" % rand(0..0xffffff)};
-  }
+nav a:hover:nth-of-type(2) {
+  background-color: #e6efc9;
+}
+nav a:hover:nth-of-type(3) {
+  background-color: #abb2cc;
+}
+nav a:hover:nth-of-type(4) {
+  background-color: #b6daf4;
+}
+nav a:hover:nth-of-type(5) {
+  background-color: #e4cce1;
+}
+nav a:hover:nth-of-type(6) {
+  background-color: #c0dcb4;
+}
+nav a:hover:nth-of-type(7) {
+  background-color: #e2b9ae;
+}
+nav a:hover:nth-of-type(8) {
+  background-color: #b8d0f1;
+}
+nav a:hover:nth-of-type(9) {
+  background-color: #eed5e0;
+}
+nav a:hover:nth-of-type(10) {
+  background-color: #d8e2af;
+}
+nav a:hover:nth-of-type(11) {
+  background-color: #ebc6ac;
+}
+nav a:hover:nth-of-type(12) {
+  background-color: #d7b6b7;
+}
+nav a:hover:nth-of-type(13) {
+  background-color: #f6e8c6;
+}
+nav a:hover:nth-of-type(14) {
+  background-color: #ebf1e6;
+}
+nav a:hover:nth-of-type(15) {
+  background-color: #e7e4f0;
+}
+nav a:hover:nth-of-type(16) {
+  background-color: #dbc6b1;
+}
+nav a:hover:nth-of-type(17) {
+  background-color: #aecf9b;
+}
+nav a:hover:nth-of-type(18) {
+  background-color: #f0cce1;
+}
+nav a:hover:nth-of-type(19) {
+  background-color: #daddea;
+}
+nav a:hover:nth-of-type(20) {
+  background-color: #f8e6e3;
+}
+nav a:hover:nth-of-type(21) {
+  background-color: #f1e8ea;
+}
+nav a:hover:nth-of-type(22) {
+  background-color: #f4d6e8;
+}
+nav a:hover:nth-of-type(23) {
+  background-color: #dff0dc;
+}
+nav a:hover:nth-of-type(24) {
+  background-color: #d1e9fe;
+}
+nav a:hover:nth-of-type(25) {
+  background-color: #dae8f3;
+}
+nav a:hover:nth-of-type(26) {
+  background-color: #eddeea;
+}
+nav a:hover:nth-of-type(27) {
+  background-color: #e3e2ef;
+}
+nav a:hover:nth-of-type(28) {
+  background-color: #d3dbed;
+}
+nav a:hover:nth-of-type(29) {
+  background-color: #e9f1d2;
+}
+nav a:hover:nth-of-type(30) {
+  background-color: #faf9d9;
+}
+nav a:hover:nth-of-type(31) {
+  background-color: #ecd1f0;
+}
+nav a:hover:nth-of-type(32) {
+  background-color: #eee1ec;
+}
+nav a:hover:nth-of-type(33) {
+  background-color: #dee7f8;
+}
+nav a:hover:nth-of-type(34) {
+  background-color: #eec7d5;
+}
+nav a:hover:nth-of-type(35) {
+  background-color: #f3ece3;
+}
+nav a:hover:nth-of-type(36) {
+  background-color: #dcecda;
+}
+nav a:hover:nth-of-type(37) {
+  background-color: #f1f9db;
+}
+nav a:hover:nth-of-type(38) {
+  background-color: #fae7d4;
+}
+nav a:hover:nth-of-type(39) {
+  background-color: #edf9db;
+}
+nav a:hover:nth-of-type(40) {
+  background-color: #d6d7e9;
+}
+nav a:hover:nth-of-type(41) {
+  background-color: #f1ece4;
+}
+nav a:hover:nth-of-type(42) {
+  background-color: #edf5e8;
 }
 
 main {
@@ -68,12 +184,59 @@ section {
 }
 
 footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	background-color: #eaf2e9;
-	padding: 1em;
-	text-align: center;
-	border-top: 2px solid #ddd;
-	position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eaf2e9;
+  padding: 1em;
+  text-align: center;
+  border-top: 2px solid #ddd;
+  position: relative;
+  height: 80px; /* Set the height of the footer to accommodate the image */
+}
+
+footer p {
+  margin: 0;
+}
+
+footer img {
+  height: 60px; /* Set the height of the image */
+  width: auto; /* Allow the width to adjust proportionally to the height */
+  margin: 5px; /* Add some margin to the image */
+}
+
+/* Random background color */
+body {
+    background-color: #eaebf5;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* JavaScript to set random background color */
+<script>
+    var colors = [        "#eaebf5", "#e3f0fa", "#faf4f7", "#f7f8fe", "#f5f8fc",        "#f6f9fd", "#f9fbf3", "#f5fbf7", "#f6f6fe", "#fcf7fb",        "#fefdf7", "#fcf8f8", "#fbf8fc", "#fdfef4", "#fafaf6",        "#fef0ea", "#f9f8ef", "#f4ece5", "#fdeeea", "#fdf6f5",        "#eff5f9", "#f5f3f5", "#fbeeec", "#f9eae7", "#fdfbf0",        "#fef6f4", "#fff3ec", "#fffcf1", "#e8e6fe", "#faf2f1",        "#f7ebed", "#f5f0f2", "#f6fcfc", "#f1f0fd", "#f8e8f5",        "#fff4eb", "#fff9eb", "#fffdeb", "#fffdeb", "#fef7e9",        "#feffeb", "#fffeeb", "#fffbeb", "#ffefeb", "#fff3eb"    ];
+
+    function setBackgroundColor() {
+        var body = document.getElementsByTagName("body")[0];
+        var randomIndex = Math.floor(Math.random() * colors.length);
+        var randomColor = colors[randomIndex];
+        body.style.backgroundColor = randomColor;
+    }
+
+    setBackgroundColor();
+    setInterval(setBackgroundColor, 50000);
+</script>
+
+@media only screen and (max-width: 600px) {
+	nav ul {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	nav li {
+		margin: 0.5em 0;
+	}
+
+	nav li:last-child {
+		margin-bottom: 1em;
+	}
 }
