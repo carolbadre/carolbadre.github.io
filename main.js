@@ -63,7 +63,7 @@
   ];
 
   // Select all the navigation links
-  const navLinks = document.querySelectorAll("nav a");
+  const navLinks = document.querySelectorAll("header nav a");
 
   // Add event listeners for hover and remove
   navLinks.forEach(link => {
