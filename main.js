@@ -62,11 +62,11 @@
   navLinks.forEach(link => {
     link.addEventListener("mouseenter", () => {
       const randomColor = colors[Math.floor(Math.random() * colors.length)];
-      link.style.setProperty('background-color', randomColor);
+      link.style.setProperty('background', randomColor, 'important');
     });
 
     link.addEventListener("mouseleave", () => {
-      link.style.removeProperty('background-color');
+      link.style.removeProperty('background');
     });
   });
 
