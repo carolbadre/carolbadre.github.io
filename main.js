@@ -73,17 +73,11 @@
     "#e7c5ae",
     "#9cacbb"  ];
 
-  const seconds = new Date().getSeconds();
-  const colorIdx = seconds % colors.length;
+  function changeNavColor() {
+  const now = new Date();
+  const colorIndex = now.getSeconds() % 60;
+  const color = colors[colorIndex];
+  document.documentElement.style.setProperty('--hover-color', color);
+}
 
-  navLinks.forEach((link) => {
-    link.addEventListener("mouseenter", () => {
-      const color = colors[colorIdx];
-      link.style.setProperty("--hover-color", color);
-    });
-
-    link.addEventListener("mouseleave", () => {
-      link.style.setProperty("--hover-color", "");
-    });
-  });
 </script>
