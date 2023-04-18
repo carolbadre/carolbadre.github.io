@@ -49,8 +49,9 @@ background-color: #fff; /* Default background color for the links */
 }
 
 nav a:hover {
-  background-color: var(--hover-color);
+  background-color: var(--hover-color, #f1e8ea);
 }
+
 
 main {
 margin: 1em;
