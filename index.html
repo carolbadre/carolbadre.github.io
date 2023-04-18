@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Website</title>
+	<title>Carol's Website</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="main.js"></script>
+	
+	       <!-- Include Leaflet CSS and JavaScript -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha384-G6r+pUjrY/CdGN7idJc1SygL6NvvQScFJcOR7RIQbLlsnsR7+9pJY5n5PC5w5nqG" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha384-WEQQut8ZPY+//O14HtSvSxWbX8pi/xYOWsMI1Gp4eC4glP8TpIjZD/kT84lSxSbW" crossorigin=""></script>
+	
+	
 </head>
 <body>
 	<header>
@@ -27,10 +33,25 @@
 			I have previously studied mathematics at The University of Melbourne and The University of Sydney. <br>
 			I enjoy drawing and visualising mathematics, primarily by hand and also by programming. 
 		</p>
+			  <!-- Create a div for the map container -->
+  		<div id="mapid" style="height: 500px;"></div>
+		
 	</main>
 	<footer>
 			<p>Copyright © 2023</p>
 			<img src="surface.svg" alt="Footer Image">
 		</footer>
 </body>
+	
+	<script>
+		// Create a new Leaflet map centered on the specified coordinates
+		var mymap = L.map('mapid').setView([40.7508104,-73.9854638], 16);
+
+		// Add an OpenStreetMap tile layer to the map
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+		}).addTo(mymap);
+
+		// Add a marker to the map at the specified coordinates
+		L.marker([40.7508104,-73.9854638]).addTo(mymap);	
 </html>
