@@ -11,7 +11,7 @@ document.querySelectorAll('.pdf-grid a').forEach(function(link) {
   });
 });
 
-// Change navigation link color and hover color every second
+// Change navigation link color every second
 const navLinks = document.querySelectorAll(".nav__link");
 
 const colors = [
@@ -79,21 +79,9 @@ const colors = [
 
 function changeNavColor() {
   const now = new Date();
-  const second = now.getSeconds();
-  const colorIndex = second % colors.length;
+  const colorIndex = now.getSeconds() % 60;
   const color = colors[colorIndex];
-  
-  navLinks.forEach(link => {
-    link.style.color = color;
-    link.addEventListener('mouseenter', function() {
-      this.style.color = '#fff';
-      this.style.backgroundColor = color;
-    });
-    link.addEventListener('mouseleave', function() {
-      this.style.color = color;
-      this.style.backgroundColor = 'transparent';
-    });
-  });
+  navLinks.forEach(link => link.style.color = color);
 }
 
 setInterval(changeNavColor, 1000);
