@@ -1,17 +1,4 @@
-// Import PDFObject library
-import PDFObject from 'https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.5/pdfobject.min.js';
-
-// Add click event listeners to PDF links
-document.querySelectorAll('.pdf-grid a').forEach(function(link) {
-  link.addEventListener('click', function(event) {
-    event.preventDefault();
-    var pdfUrl = this.href;
-    PDFObject.embed(pdfUrl, "#pdf-viewer");
-    document.querySelector('#pdf-modal').classList.add('open');
-  });
-});
-
-// Change navigation link color every second
+// Change navigation link color and hover color every second
 const navLinks = document.querySelectorAll(".nav__link");
 
 const colors = [
@@ -79,9 +66,19 @@ const colors = [
 
 function changeNavColor() {
   const now = new Date();
-  const colorIndex = now.getSeconds() % 60;
+  const second = now.getSeconds();
+  const colorIndex = second % colors.length;
   const color = colors[colorIndex];
-  navLinks.forEach(link => link.style.color = color);
+  
+  navLinks.forEach(link => {
+    link.style.color = "#333"; // Set text color to #333
+    link.addEventListener('mouseover', function() {
+      this.style.backgroundColor = color;
+    });
+    link.addEventListener('mouseout', function() {
+      this.style.backgroundColor = 'transparent';
+    });
+  });
 }
 
 setInterval(changeNavColor, 1000);
