@@ -1,5 +1,12 @@
+<!-- HTML code for the PDF viewer and modal containers -->
+<div id="pdf-viewer"></div>
+<div id="pdf-modal"></div>
+
+<!-- Link to the PDFObject library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.5/pdfobject.min.js"></script>
+
 <script>
+  // Embed PDFs in the page when the user clicks on a link with the class "pdf-grid a"
   document.querySelectorAll('.pdf-grid a').forEach(function(link) {
     link.addEventListener('click', function(event) {
       event.preventDefault();
@@ -9,9 +16,8 @@
     });
   });
 
-  const navLinks = document.querySelectorAll(".nav__link");
-
-  const colors = [
+// Define an array of colors
+const colors = [
     "#b8c4c6",
     "#e6efc9",
     "#abb2cc",
@@ -73,11 +79,15 @@
     "#e7c5ae",
     "#9cacbb"  ];
 
-  function changeNavColor() {
-  const now = new Date();
-  const colorIndex = now.getSeconds() % 60;
-  const color = colors[colorIndex];
-  document.documentElement.style.setProperty('--hover-color', color);
-}
 
+  // Change the CSS variable "--hover-color" to a different color every second based on the current time
+  function changeNavColor() {
+    const now = new Date();
+    const colorIndex = now.getSeconds() % 60;
+    const color = colors[colorIndex];
+    document.documentElement.style.setProperty('--hover-color', color);
+  }
+
+  // Call the changeNavColor function every second using setInterval
+  setInterval(changeNavColor, 1000);
 </script>
