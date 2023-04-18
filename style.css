@@ -1,119 +1,123 @@
-{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+:root {
+  --hover-color: #f1f1f1;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-font-family: "Linux Libertine", serif;
-background-color: #f8f8f8;
-margin: 0;
+  font-family: "Linux Libertine", serif;
+  background-color: #f8f8f8;
+  margin: 0;
 }
 
 header {
-background-color: #fff;
-border-bottom: 2px solid #ddd;
-padding: 1em;
+  background-color: #fff;
+  border-bottom: 2px solid #ddd;
+  padding: 1em;
 }
 
 h1 {
-margin: 0;
+  margin: 0;
 }
 
 nav {
-margin-top: 1em;
+  margin-top: 1em;
 }
 
 nav ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
-display: flex;
-justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav li {
-display: inline-block;
-margin-right: 1em;
+  display: inline-block;
+  margin-right: 1em;
 }
 
 nav li:last-child {
-margin-right: 0;
+  margin-right: 0;
 }
 
 nav a {
-color: #465787;
-text-decoration: none;
-font-weight: bold;
-padding: 0.5em;
-background-color: #fff; /* Default background color for the links */
+  color: #465787;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em;
+  background-color: #fff; /* Default background color for the links */
 }
 
 nav a:hover {
   background-color: var(--hover-color);
 }
 
-
 main {
-margin: 1em;
+  margin: 1em;
 }
 
 h2 {
-margin-top: 2em;
+  margin-top: 2em;
 }
 
 section {
-margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 footer {
-display: flex;
-align-items: center;
-justify-content: space-between;
-background-color: #eaf2e9;
-padding: 1em;
-text-align: center;
-border-top: 2px solid #ddd;
-position: relative;
-height: 80px; /* Set the height of the footer to accommodate the image */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eaf2e9;
+  padding: 1em;
+  text-align: center;
+  border-top: 2px solid #ddd;
+  position: relative;
+  height: 80px; /* Set the height of the footer to accommodate the image */
 }
 
 footer p {
-margin: 0;
+  margin: 0;
 }
 
 footer img {
-height: 80px; /* Set the height of the image /
-width: auto; / Allow the width to adjust proportionally to the height /
-margin: 5px; / Add some margin to the image */
+  height: 80px; /* Set the height of the image /
+  width: auto; / Allow the width to adjust proportionally to the height /
+  margin: 5px; / Add some margin to the image */
 }
 
 @media only screen and (max-width: 600px) {
-nav ul {
-flex-direction: column;
-align-items: center;
-}
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-nav li {
-margin: 0.5em 0;
-text-align: center; /* Added to center the text in mobile view */
-}
+  nav li {
+    margin: 0.5em 0;
+    text-align: center; /* Added to center the text in mobile view */
+  }
 
-nav li:last-child {
-margin-bottom: 1em;
-}
+  nav li:last-child {
+    margin-bottom: 1em;
+  }
 
-footer img {
-height: 60px; /* Decreased the height of the image for mobile view */
-}
+  footer img {
+    height: 60px; /* Decreased the height of the image for mobile view */
+  }
 }
 
 @media only screen and (min-width: 601px) {
-nav li {
-margin: 0 1em;
-text-align: left; /* Reset to default alignment */
-}
+  nav li {
+    margin: 0 1em;
+    text-align: left; /* Reset to default alignment */
+  }
 
-nav li:last-child {
-margin-right: 0;
-}
+  nav li:last-child {
+    margin-right: 0;
+  }
 }
