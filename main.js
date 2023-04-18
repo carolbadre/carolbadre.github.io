@@ -70,6 +70,9 @@
     });
   });
 
+  // Set the hover color variable for the nav links
+  document.documentElement.style.setProperty('--hover-color', colors[Math.floor(Math.random() * colors.length)]);
+
   document.querySelector('#pdf-modal .close').addEventListener('click', function() {
     document.querySelector('#pdf-modal').classList.remove('open');
     document.querySelector('#pdf-viewer').innerHTML = '';
