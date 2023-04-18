@@ -9,13 +9,6 @@
     });
   });
 
-  document.querySelector('#pdf-modal .close').addEventListener('click', function() {
-    document.querySelector('#pdf-modal').classList.remove('open');
-    document.querySelector('#pdf-viewer').innerHTML = '';
-  });
-</script>
-
-<script>
   // Define the set of colors
   const colors = [
     "#b8c4c6",
@@ -75,5 +68,10 @@
     link.addEventListener("mouseleave", () => {
       link.style.backgroundColor = "";
     });
+  });
+
+  document.querySelector('#pdf-modal .close').addEventListener('click', function() {
+    document.querySelector('#pdf-modal').classList.remove('open');
+    document.querySelector('#pdf-viewer').innerHTML = '';
   });
 </script>
