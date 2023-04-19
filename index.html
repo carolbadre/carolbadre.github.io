@@ -39,8 +39,8 @@
 		
 	</main><!-- HTML code -->
 	<footer>
-	  <p>Copyright © 2023</p>
-	  <img src="compass_math5.svg" alt="Compass Math Image" class="center-image" id="compass-math-image">
+	  <p>&copy; 2023</p>
+	  <object data="compass_math5.svg" type="image/svg+xml" class="center-image" id="compass-math-image"></object>
 	  <img src="surface.svg" alt="Surface Image" class="right-image">
 	</footer>
 
@@ -54,18 +54,18 @@
 	  });
 	</script>
 
-
 	<style>
 	  footer {
 	    display: flex;
 	    align-items: center;
 	    justify-content: space-between;
 	    padding: 10px;
+	    height: 50px; /* added height property */
 	  }
 
 	  .center-image {
 	    height: 100%;
-	    opacity: 0.4;
+	    opacity: 0.6; /* changed opacity from 0.4 to 0.6 */
 	    margin: 0 10px 0 auto;
 	    display: block;
 	    filter: hue-rotate(180deg) saturate(70%);
