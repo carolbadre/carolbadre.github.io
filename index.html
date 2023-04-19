@@ -37,10 +37,11 @@
   		<br> <br> <br> <br>
   		<iframe width="300" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.01197433471681%2C40.73431572761954%2C-73.95532608032228%2C40.76273111352536&amp;layer=mapnik&amp;attribution=false&amp;markers=color:blue%7Csize:big%7C40.7423477,-73.9858257" style="border: 1px solid black"></iframe>
 		
-	</main><!-- HTML code -->
+	</main><!-- HTML code -->	
+	
 	<footer>
-	  <p>&copy; 2023</p>
-	  <object data="compass_math5.svg" type="image/svg+xml" class="center-image" id="compass-math-image"></object>
+	  <p>Copyright © 2023</p>
+	  <img src="compass_math5.svg" alt="Compass Math Image" class="center-image" id="compass-math-image">
 	  <img src="surface.svg" alt="Surface Image" class="right-image">
 	</footer>
 
@@ -54,18 +55,18 @@
 	  });
 	</script>
 
+
 	<style>
 	  footer {
 	    display: flex;
 	    align-items: center;
 	    justify-content: space-between;
 	    padding: 10px;
-	    height: 50px; /* added height property */
 	  }
 
 	  .center-image {
 	    height: 100%;
-	    opacity: 0.6; /* changed opacity from 0.4 to 0.6 */
+	    opacity: 0.4;
 	    margin: 0 10px 0 auto;
 	    display: block;
 	    filter: hue-rotate(180deg) saturate(70%);
