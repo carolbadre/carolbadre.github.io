@@ -42,19 +42,10 @@
 	
 	<footer>
 	  <p>Copyright © 2023</p>
-	  <img src="compass_math5.svg" alt="Compass Math Image" class="center-image" id="compass-math-image">
+	  <img src="compass_math5_blue.svg" alt="Compass Math Image" class="center-image" id="compass-math-image">
 	  <img src="surface.svg" alt="Surface Image" class="right-image">
 	</footer>
 
-	<!-- JavaScript code -->
-	<script>
-	  const svg = document.getElementById('compass-math-image').contentDocument; // get the SVG content
-	  const paths = svg.querySelectorAll('path'); // select all path elements within the SVG
-	  paths.forEach(path => {
-	    path.style.fill = '#568BB7'; // change the fill color of each path to #568BB7
-	    path.style.opacity = '0.6'; // set the opacity of each path to 60%
-	  });
-	</script>
 
 
 	<style>
@@ -66,11 +57,10 @@
 	  }
 
 	  .center-image {
-	    height: 100%;
+	    height: 120%;
 	    opacity: 0.4;
 	    margin: 0 10px 0 auto;
 	    display: block;
-	    filter: hue-rotate(180deg) saturate(70%);
 	  }
 
 	  .right-image {
