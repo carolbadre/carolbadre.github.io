@@ -84,9 +84,7 @@ const colors = [
 ];
 
 function changeNavColor() {
-  const now = new Date();
-  const second = now.getSeconds();
-  const colorIndex = second % colors.length;
+  const colorIndex = Math.floor(Math.random() * colors.length);
   const color = colors[colorIndex];
 
   navLinks.forEach(link => {
@@ -108,5 +106,3 @@ function changeNavColor() {
     });
   });
 }
-
-setInterval(changeNavColor, 1000);
