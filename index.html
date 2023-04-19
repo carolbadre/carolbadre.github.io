@@ -61,9 +61,10 @@
 	  opacity: 0.6;
 	  margin: 0 10px 0 auto;
 	  display: block;
-	  border: 2px solid #eaf2e9; /* add a solid border with 50% opacity */
-	  border-radius: 50%; /* make the border circular */
-	  padding: 5px; /* add some padding to the border */
+	  border: 2px solid transparent;
+	  border-radius: 5px;
+	  padding: 5px;
+	  background: linear-gradient(to right, transparent, rgba(234, 242, 233, 0.5) 5%, #eaf2e9 95%, #eaf2e9); /* use a gradient to create the fading effect */
 	}
 
 	  .right-image {
