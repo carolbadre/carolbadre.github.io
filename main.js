@@ -1,4 +1,23 @@
-// Change navigation link color and hover color every second
+<!-- HTML code for the PDF viewer and modal containers -->
+<div id="pdf-viewer"></div>
+<div id="pdf-modal"></div>
+
+<!-- Link to the PDFObject library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.5/pdfobject.min.js"></script>
+
+<script>
+  // Embed PDFs in the page when the user clicks on a link with the class "pdf-grid a"
+  document.querySelectorAll('.pdf-grid a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      var pdfUrl = this.href;
+      PDFObject.embed(pdfUrl, "#pdf-viewer");
+      document.querySelector('#pdf-modal').classList.add('open');
+    });
+  });
+
+
+
 const navLinks = document.querySelectorAll(".nav__link");
 
 const colors = [
@@ -69,14 +88,23 @@ function changeNavColor() {
   const second = now.getSeconds();
   const colorIndex = second % colors.length;
   const color = colors[colorIndex];
-  
+
   navLinks.forEach(link => {
     link.style.color = "#333"; // Set text color to #333
-    link.addEventListener('mouseover', function() {
-      this.style.backgroundColor = color;
+    let hoverColor = null;
+    link.addEventListener("mouseover", function () {
+      hoverColor = color;
+      this.style.backgroundColor = hoverColor;
     });
-    link.addEventListener('mouseout', function() {
-      this.style.backgroundColor = 'transparent';
+    link.addEventListener("mouseout", function () {
+      hoverColor = null;
+      this.style.backgroundColor = "transparent";
+    });
+    link.addEventListener("mousemove", function () {
+      if (hoverColor === null) {
+        hoverColor = color;
+        this.style.backgroundColor = hoverColor;
+      }
     });
   });
 }
