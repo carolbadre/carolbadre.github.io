@@ -35,7 +35,33 @@
 		<!-- Include the iframe for the map -->
 
   		<br> <br> <br> <br>
-  		<iframe width="300" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.01197433471681%2C40.73431572761954%2C-73.95532608032228%2C40.76273111352536&amp;layer=mapnik&amp;attribution=false&amp;markers=color:blue%7Csize:big%7C40.7423477,-73.9858257" style="border: 1px solid black"></iframe>
+ 	 <div id="map"></div>
+	<script src="https://cdn.leafletjs.com/leaflet/v1.7.1/leaflet.js"></script>
+	<script>
+	    const map = L.map('map').setView([40.7423477, -73.9858257], 16);
+	    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	        attribution: false
+	    }).addTo(map);
+	    const marker = L.marker([40.7423477, -73.9858257], { 
+	        icon: L.icon({ 
+	            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png', 
+	            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/images/marker-shadow.png', 
+	            iconSize: [25, 41], 
+	            iconAnchor: [12, 41], 
+	            shadowSize: [41, 41], 
+	        })
+	    }).addTo(map);
+	    
+	    const osmFrame = document.createElement('iframe');
+	    osmFrame.width = '300';
+	    osmFrame.height = '250';
+	    osmFrame.frameBorder = '0';
+	    osmFrame.scrolling = 'no';
+	    osmFrame.marginheight = '0';
+	    osmFrame.marginwidth = '0';
+	    osmFrame.src = 'https://www.openstreetmap.org/export/embed.html?bbox=-74.01197433471681%2C40.73431572761954%2C-73.95532608032228%2C40.76273111352536&amp;layer=mapnik&amp;attribution=false&amp;marker=40.747695%2C-73.984398%2Cred';
+	    document.getElementById('map').appendChild(osmFrame);
+	</script>
 		
 	</main><!-- HTML code -->	
 	
