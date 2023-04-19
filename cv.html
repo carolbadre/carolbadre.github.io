@@ -25,10 +25,40 @@
 
 	</main>
 </body>
-<footer>
-		<p>Copyright © 2023</p>
-		<img src="surface.svg" alt="Footer Image">
-
+	</main><!-- HTML code -->	
+	
+	<footer>
+	  <p>Copyright © 2023</p>
+	  <img src="knot_green.svg" alt="knot_green" class="center-image" id="knot_green">
+	  <img src="surface.svg" alt="Surface Image" class="right-image">
 	</footer>
-</body>
+
+
+
+	<style>
+	  footer {
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	    padding: 10px;
+	  }
+
+	.center-image {
+  	height: 125%;
+  	opacity: 0.6;
+  	margin: 0 15px 0 auto;
+  	display: block;
+  	border: 2px solid transparent;
+  	border-radius: 5px;
+  	padding: 5px;
+  	background: linear-gradient(to right, transparent, rgba(234, 242, 233, 0.5) 5%, rgba(234, 242, 233, 0.5) 95%, #eaf2e9); /* use a gradient to create the fading effect */
+	}
+
+	  .right-image {
+	    height: 140%;
+	    opacity: 1;
+	    margin-left: auto;
+	    display: block;
+	  }
+	</style>
 </html>
