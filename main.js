@@ -80,15 +80,18 @@ const colors = [
   "#9cacbb"
 ];
 
-const navLinks = document.querySelectorAll('.navbar a');
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
 
-navLinks.forEach((link) => {
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+  link.style.backgroundColor = 'transparent';
   link.addEventListener('mouseover', function() {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    link.style.background = randomColor;
+    this.style.backgroundColor = getRandomColor();
   });
-
   link.addEventListener('mouseout', function() {
-    link.style.backgroundColor = 'transparent';
+    this.style.backgroundColor = 'transparent';
   });
 });
