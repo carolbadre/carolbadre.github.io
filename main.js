@@ -17,9 +17,6 @@
   });
 
 
-
-const navLinks = document.querySelectorAll(".nav__link");
-
 const colors = [
   "#b8c4c6",
   "#e6efc9",
@@ -83,26 +80,15 @@ const colors = [
   "#9cacbb"
 ];
 
-function changeNavColor() {
-  const colorIndex = Math.floor(Math.random() * colors.length);
-  const color = colors[colorIndex];
+const navLinks = document.querySelectorAll('.navbar a');
 
-  navLinks.forEach(link => {
-    link.style.color = "#333"; // Set text color to #333
-    let hoverColor = null;
-    link.addEventListener("mouseover", function () {
-      hoverColor = color;
-      this.style.backgroundColor = hoverColor;
-    });
-    link.addEventListener("mouseout", function () {
-      hoverColor = null;
-      this.style.backgroundColor = "transparent";
-    });
-    link.addEventListener("mousemove", function () {
-      if (hoverColor === null) {
-        hoverColor = color;
-        this.style.backgroundColor = hoverColor;
-      }
-    });
+navLinks.forEach((link) => {
+  link.addEventListener('mouseover', function() {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    link.style.backgroundColor = randomColor;
   });
-}
+
+  link.addEventListener('mouseout', function() {
+    link.style.backgroundColor = 'transparent';
+  });
+});
