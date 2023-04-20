@@ -85,7 +85,7 @@ const navLinks = document.querySelectorAll('.navbar a');
 navLinks.forEach((link) => {
   link.addEventListener('mouseover', function() {
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    link.style.backgroundColor = randomColor;
+    link.style.background = randomColor;
   });
 
   link.addEventListener('mouseout', function() {
