@@ -16,6 +16,11 @@
     });
   });
 
+document.querySelectorAll('.pdf-grid a').forEach(function(link) {
+  link.addEventListener('mouseover', function() {
+    this.style.color = getRandomColor();
+  });
+});
 
 const colors = [
   "#b8c4c6",
