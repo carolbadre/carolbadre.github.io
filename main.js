@@ -82,16 +82,9 @@ const colors = [
 
 function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
-}
+} 
 
-const navLinks = document.querySelectorAll('nav a');
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+document.documentElement.style.setProperty('--hover-color', randomColor);
+</script>
 
-navLinks.forEach(link => {
-  link.style.backgroundColor = 'transparent';
-  link.addEventListener('mouseover', function() {
-    this.style.backgroundColor = getRandomColor();
-  });
-  link.addEventListener('mouseout', function() {
-    this.style.backgroundColor = 'transparent';
-  });
-});
