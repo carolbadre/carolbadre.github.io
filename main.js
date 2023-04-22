@@ -16,6 +16,15 @@
     });
   });
 
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
+} 
+
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+document.documentElement.style.setProperty('--hover-color', randomColor);
+
+
+
 document.querySelectorAll('.pdf-grid a').forEach(function(link) {
   link.addEventListener('mouseover', function() {
     this.style.color = getRandomColor();
@@ -85,11 +94,5 @@ const colors = [
   "#9cacbb"
 ];
 
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
-} 
-
-const randomColor = colors[Math.floor(Math.random() * colors.length)];
-document.documentElement.style.setProperty('--hover-color', randomColor);
 </script>
 
