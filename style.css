@@ -46,7 +46,7 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   padding: 0.5em;
-  background-color: #fff; /* Default background color for the links */
+  background-color: --hover-color; /* Default background color for the links */
 }
 
 :root {
