@@ -16,21 +16,6 @@
     });
   });
 
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
-} 
-
-const randomColor = colors[Math.floor(Math.random() * colors.length)];
-document.documentElement.style.setProperty('--hover-color', randomColor);
-
-
-
-document.querySelectorAll('.pdf-grid a').forEach(function(link) {
-  link.addEventListener('mouseover', function() {
-    this.style.color = getRandomColor();
-  });
-});
-
 const colors = [
   "#b8c4c6",
   "#e6efc9",
@@ -93,6 +78,25 @@ const colors = [
   "#e7c5ae",
   "#9cacbb"
 ];
+
+
+
+function getRandomColor() {
+  console.log('getRandomColor() called');
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+document.documentElement.style.setProperty('--hover-color', randomColor);
+
+
+
+document.querySelectorAll('.pdf-grid a').forEach(function(link) {
+  link.addEventListener('mouseover', function() {
+    this.style.color = getRandomColor();
+  });
+});
+
 
 </script>
 
