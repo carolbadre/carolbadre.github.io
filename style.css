@@ -50,7 +50,6 @@ nav a {
 }
 
 :root {
-  --random-color: #000000;
   --hover-color: var(--random-color);  /* Set the hover background color */
 }
 
