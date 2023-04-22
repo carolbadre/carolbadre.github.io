@@ -50,11 +50,12 @@ nav a {
 }
 
 :root {
-  --hover-color: var(--random-color);  /* Set the hover background color */
+  --random-color: hsla(0, 0%, 80%, 1); /* Set a default random color */
 }
 
 nav a:hover {
-  background-color: var(--hover-color);
+  --random-color: hsla(360 * var(--hue), 60%, 70%, 1); /* Set a new random color on hover */
+  background-color: var(--random-color); /* Use the new random color as the hover background color */
 }
 
 main {
@@ -121,3 +122,4 @@ footer img {
     margin-right: 0;
   }
 }
+
