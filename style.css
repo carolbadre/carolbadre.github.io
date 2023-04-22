@@ -46,11 +46,12 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   padding: 0.5em;
-  background-color: --hover-color; /* Default background color for the links */
+  background-color: var(--hover-color); /* Default background color for the links */
 }
 
 :root {
-  --hover-color: getRandomColor();  /* Set the hover background color */
+  --random-color: #000000;
+  --hover-color: var(--random-color);  /* Set the hover background color */
 }
 
 nav a:hover {
