@@ -1,56 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Documents and Talks</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="main.js"></script>
+    <title>My Documents and Talks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            min-height: calc(100vh - 80px); /* Adjust the value as needed */
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        main::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('jerome2.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+    <script src="main.js"></script>
 </head>
 <body>
-	<header>
-		<img src="header.svg" alt="Website Header" />
-		<nav id="my-nav">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="cv.html">CV</a></li>
-				<li><a href="Images.html">Images</a></li>
-				<li><a href="Writing.html">Writing</a></li>
-				<li><a href="Contact.html">Contact</a></li>
-				<li><a href="Teaching.html">Teaching</a></li>		
-			</ul>
-		</nav>
-	</header>
-	
-	<main>
-		
-		
-		<h2>Writing</h2>
-		<ul>
-			<li><a href="lit_review.pdf">A Brief survey of some aspects of geometric group theory</a></li>
-			<!-- <li><a href="#">Document 2</a></li> -->
-			<!-- <li><a href="#">Document 3</a></li> -->
-		</ul>
+    <header>
+        <img src="header.svg" alt="Website Header" />
+        <nav id="my-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="Images.html">Images</a></li>
+                <li><a href="Writing.html">Writing</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Teaching.html">Teaching</a></li>
+            </ul>
+        </nav>
+    </header>
 
-		<h2>Notes</h2>
-		<ul>
-			<li><a href="#">Notes on <em>Thurston's Work on Surfaces</em> by A. Fathi, F. Laudenbach, V. Poenaru, et al. </a></li> 
- 				<li><a href="#">Notes on <em>Automorphisms of Surfaces after Nielsen and Thurston</em> by Andrew J. Casson and Steven A. Bleiler</a></li> 
-			<!-- <li><a href="#">Talk 3</a></li> -->
-		</ul>
+    <main>
+        <h2>Writing</h2>
+        <ul>
+            <li><a href="lit_review.pdf">A Brief survey of some aspects of geometric group theory</a></li>
+        </ul>
 
-		<h2>My Talks</h2>
-		<br> <br> <br>
-		<ul>
-			<li><a href="#">Talk 1</a></li> 
-			<li><a href="#">Talk 2</a></li> 
-			<li><a href="#">Talk 3</a></li> 
-		</ul>
-	</main>
-	
-	<footer>
-		<p>Copyright © 2023</p>
-		<img src="surface.svg" alt="Footer Image">
-	</footer>
+        <h2>Notes</h2>
+        <ul>
+            <li><a href="#">Notes on <em>Thurston's Work on Surfaces</em> by A. Fathi, F. Laudenbach, V. Poenaru, et al. </a></li>
+            <li><a href="#">Notes on <em>Automorphisms of Surfaces after Nielsen and Thurston</em> by Andrew J. Casson and Steven A. Bleiler</a></li>
+        </ul>
+
+        <h2>My Talks</h2>
+        <br> <br> <br>
+        <ul>
+            <li><a href="#">Talk 1</a></li>
+            <li><a href="#">Talk 2</a></li>
+            <li><a href="#">Talk 3</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2023</p>
+        <img src="surface.svg" alt="Footer Image">
+    </footer>
 </body>
 </html>
