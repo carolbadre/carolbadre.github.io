@@ -1,27 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My CV</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="main.js"></script>
-</head>
-<body>
-	<header>
-		<img src="header.svg" alt="Website Header" />
-		<nav id="my-nav">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="cv.html">CV</a></li>
-				<li><a href="Images.html">Images</a></li>
-				<li><a href="Writing.html">Writing</a></li>
-				<li><a href="Contact.html">Contact</a></li>
-				<li><a href="Teaching.html">Teaching</a></li>
-				
-			</ul>
-		</nav>
-	</header>
-	<main>
-	main::before {
+    <title>My CV</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        main::before {
             content: "";
             position: absolute;
             top: 0;
@@ -35,23 +18,29 @@
             opacity: 0.5;
             z-index: -1;
         }
-
-
-		<a href="cv_2023.pdf" target="_blank">My CV (as of January 2023)</a>
-
-	</main>
-
-
-	
-	
-	
+    </style>
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <img src="header.svg" alt="Website Header" />
+        <nav id="my-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="Images.html">Images</a></li>
+                <li><a href="Writing.html">Writing</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Teaching.html">Teaching</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a href="cv_2023.pdf" target="_blank">My CV (as of January 2023)</a>
+    </main>
+    <footer>
+        <p>Copyright © 2023</p>
+        <img src="surface.svg" alt="Footer Image">
+    </footer>
 </body>
-	</main><!-- HTML code -->	
-	
-	<footer>
-		<p>Copyright © 2023</p>
-		<img src="surface.svg" alt="Footer Image">
-
-	</footer>
-
 </html>
