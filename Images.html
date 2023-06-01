@@ -90,35 +90,39 @@
         <video id="my-video" src="swirl.mp4" controls muted playsinline>
   
         </video>
-      <style>
-      #my-video {
-       max-width: 320px;
-       height: auto;
-      }
-      </style>
+<style>
+  #my-video {
+    max-width: 320px;
+    height: auto;
+  }
+  
+  .video-container {
+    display: none;
+  }
+</style>
 
-      <video id="my-video" src="video.mp4" controls muted playsinline>
-      </video>
+<div class="video-container">
+  <video id="my-video" src="video.mp4" controls muted playsinline loop>
+    Your browser does not support the video tag.
+  </video>
+</div>
 
-      <script>
-      var video = document.getElementById("my-video");
+<script>
+  var video = document.getElementById("my-video");
 
-      video.addEventListener("click", function() {
-       if (video.requestFullscreen) {
-         video.requestFullscreen();
-       } else if (video.mozRequestFullScreen) {
-         video.mozRequestFullScreen();
-       } else if (video.webkitRequestFullscreen) {
-         video.webkitRequestFullscreen();
-       } else if (video.msRequestFullscreen) {
-         video.msRequestFullscreen();
-       }
-      });
+  video.addEventListener("click", function() {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.mozRequestFullScreen) {
+      video.mozRequestFullScreen();
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+      video.msRequestFullscreen();
+    }
+  });
+</script>
 
-       video.addEventListener("ended", function() {
-       video.play();
-       });
-     </script>
         
         
       </section>
