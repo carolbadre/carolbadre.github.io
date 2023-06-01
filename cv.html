@@ -13,23 +13,23 @@
         main {
             min-height: calc(100vh - 80px); /* Adjust the value as needed */
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-start;
+            align-items: flex-start;
             position: relative;
         }
 
         main::before {
             content: "";
             position: absolute;
-            bottom: -10%; /* Adjust the value to position the background SVG lower */
-            right: 0;
+            top: 0;
+            left: 0;
             width: 50%;
             height: 100%;
             background-image: url('stellated_dodecahedron_3.svg');
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 50% auto;
-            opacity: 0.5;
+            background-size: 70% auto;
+            opacity: 0.3;
             z-index: -1;
         }
 
