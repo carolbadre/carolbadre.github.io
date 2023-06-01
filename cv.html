@@ -5,22 +5,38 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         body {
-            background-image: url('stellated_dodecahedron_3.svg');
-            background-repeat: no-repeat;
-            background-position: right top;
-            background-attachment: fixed;
-            opacity: 0.5;
+            background-color: #f1f1f1;
         }
 
         main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-grow: 1;
+            position: relative;
+            background-color: #ffffff;
+            padding: 20px;
         }
 
-        main img {
-            max-width: 50%;
+        main::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('stellated_dodecahedron_3.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50% auto;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
         }
     </style>
     <script src="main.js"></script>
@@ -41,6 +57,7 @@
     </header>
     <main>
         <img src="svg_image.svg" alt="SVG Image">
+        <!-- Your content here -->
     </main>
     <footer>
         <p>Copyright © 2023</p>
