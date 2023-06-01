@@ -90,26 +90,35 @@
         <video id="my-video" src="swirl.mp4" controls muted playsinline>
   
         </video>
+      <style>
+      #my-video {
+       max-width: 320px;
+       height: auto;
+      }
+      </style>
 
-        <script>
-          var video = document.getElementById("my-video");
+      <video id="my-video" src="video.mp4" controls muted playsinline>
+      </video>
 
-          video.addEventListener("click", function() {
-           if (video.requestFullscreen) {
-              video.requestFullscreen();
-            } else if (video.mozRequestFullScreen) {
-              video.mozRequestFullScreen();
-            } else if (video.webkitRequestFullscreen) {
-              video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) {
-              video.msRequestFullscreen();
-            }
-          });
+      <script>
+      var video = document.getElementById("my-video");
 
-          video.addEventListener("ended", function() {
-            video.play();
-          });
-        </script>
+      video.addEventListener("click", function() {
+       if (video.requestFullscreen) {
+         video.requestFullscreen();
+       } else if (video.mozRequestFullScreen) {
+         video.mozRequestFullScreen();
+       } else if (video.webkitRequestFullscreen) {
+         video.webkitRequestFullscreen();
+       } else if (video.msRequestFullscreen) {
+         video.msRequestFullscreen();
+       }
+      });
+
+       video.addEventListener("ended", function() {
+       video.play();
+       });
+     </script>
         
         
       </section>
