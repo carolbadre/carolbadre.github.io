@@ -87,7 +87,29 @@
         </div>
         
         <h2>Animations</h2>
-        <video src="swirl.mp4" controls></video>
+        <video id="my-video" src="swirl.mp4" controls muted playsinline>
+  
+        </video>
+
+        <script>
+          var video = document.getElementById("my-video");
+
+          video.addEventListener("click", function() {
+           if (video.requestFullscreen) {
+              video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+              video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) {
+              video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+              video.msRequestFullscreen();
+            }
+          });
+
+          video.addEventListener("ended", function() {
+            video.play();
+          });
+        </script>
         
         
       </section>
