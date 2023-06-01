@@ -4,10 +4,24 @@
     <title>My CV</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
+        body {
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            min-height: calc(100vh - 80px); /* Adjust the value as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
         main::before {
             content: "";
             position: absolute;
-            top: 0;
+            bottom: -10%; /* Adjust the value to position the background SVG lower */
             right: 0;
             width: 50%;
             height: 100%;
@@ -17,6 +31,16 @@
             background-size: 50% auto;
             opacity: 0.5;
             z-index: -1;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
         }
     </style>
     <script src="main.js"></script>
@@ -39,7 +63,7 @@
         <a href="cv_2023.pdf" target="_blank">My CV (as of January 2023)</a>
     </main>
     <footer>
-        <p>Copyright © 2023</p>
+        <p>&copy; 2023</p>
         <img src="surface.svg" alt="Footer Image">
     </footer>
 </body>
