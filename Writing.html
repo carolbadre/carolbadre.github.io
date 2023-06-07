@@ -5,6 +5,40 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		main {
+			min-height: calc(100vh - 300px); /* Adjust the value as needed */
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			position: relative;
+		}
+
+		main::before {
+			content: "";
+			position: absolute;
+			top: -20px;
+			right: 0;
+			width: 50%;
+			height: 100%;
+			background-image: url('cuneform.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 50% auto;
+			opacity: 0.3;
+			z-index: -1;
+		}
+
+		header {
+			position: relative;
+			z-index: 1;
+		}
+
+		footer {
+			position: relative;
+			z-index: 1;
+		}
+	</style>
 	<script src="main.js"></script>
 </head>
 <body>
@@ -23,8 +57,6 @@
 	</header>
 	
 	<main>
-		
-		
 		<h2>Writing</h2>
 		<ul>
 			<li><a href="lit_review.pdf">A Brief survey of some aspects of geometric group theory</a></li>
@@ -35,7 +67,7 @@
 		<h2>Notes</h2>
 		<ul>
 			<li><a href="#">Notes on <em>Thurston's Work on Surfaces</em> by A. Fathi, F. Laudenbach, V. Poenaru, et al. </a></li> 
- 				<li><a href="#">Notes on <em>Automorphisms of Surfaces after Nielsen and Thurston</em> by Andrew J. Casson and Steven A. Bleiler</a></li> 
+			<li><a href="#">Notes on <em>Automorphisms of Surfaces after Nielsen and Thurston</em> by Andrew J. Casson and Steven A. Bleiler</a></li> 
 			<!-- <li><a href="#">Talk 3</a></li> -->
 		</ul>
 
