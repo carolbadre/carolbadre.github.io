@@ -82,8 +82,14 @@ function getRandomColor() {
 
 // Add event listener to all navigation links to change their background color on hover
 document.querySelectorAll('#my-nav .nav-link').forEach(function(link) {
-  link.addEventListener('mouseenter', function() {
+  link.addEventListener('mouseover', function() {
     const randomColor = getRandomColor();
     this.style.backgroundColor = randomColor;
   });
+
+  link.addEventListener('mouseleave', function() {
+    // Reset the background color on mouse leave
+    this.style.backgroundColor = '';
+  });
+});
 </script>
