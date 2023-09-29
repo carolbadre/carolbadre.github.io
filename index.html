@@ -24,10 +24,9 @@
       height: auto; /* Maintain aspect ratio */
     }
     .map-container {
-      display: flex;
-      justify-content: flex-end; /* Align map to the bottom right */
-      align-items: flex-end; /* Align map to the bottom right */
-      height: 100%; /* Ensure the container takes up full height */
+      position: absolute; /* Position the container absolutely */
+      left: 0; /* Align the container to the left */
+      bottom: 0; /* Align the container to the bottom */
     }
     iframe {
       width: 300px; /* Set the width of the map */
@@ -63,7 +62,7 @@
         <img src="IMG_4943++.jpg" alt="Your Photo" />
       </div>
     </div>
-    <!-- Map container with flexible positioning -->
+    <!-- Map container positioned on the left -->
     <div class="map-container">
       <iframe frameborder="0" scrolling="no" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.01197433471681%2C40.73431572761954%2C-73.95532608032228%2C40.76273111352536&amp;layer=mapnik&amp;markers=color:blue%7Csize:big%7C40.7423477,-73.9858257&amp;show_attr=false"></iframe>
     </div>
