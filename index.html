@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <title>Carol's Website</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    /* Additional CSS for the layout */
+    .content-container {
+      display: flex;
+      flex-direction: row; /* Arrange items horizontally */
+      justify-content: space-between; /* Space between text and image */
+    }
+    .text {
+      flex: 1; /* Take up available space on the left */
+    }
+    .image {
+      flex: 1; /* Take up available space on the right */
+      text-align: right; /* Align image to the right */
+    }
+    .image img {
+      max-width: 50%; /* Set maximum image width to half of the page */
+      height: auto; /* Maintain aspect ratio */
+    }
+  </style>
 </head>
 <body>
   <header>
