@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="main.js"></script>
+	<style>
+		main {
+			min-height: calc(100vh + 200px); /* Adjust the value as needed */
+			display: flex;
+			flex-direction: row; /* Changed from column */
+			justify-content: flex-start;
+			align-items: flex-start;
+			position: relative;
+		}
+
+		main::before {
+			content: "";
+			position: absolute;
+			top: -40px;
+			right: 100px;
+			width: 90%; /* Updated this line */
+			height: 90%;
+			background-image: url('cuneform.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: auto 90%; /* Updated this line */
+			opacity: 0.2;
+			z-index: -1;
+		}
+
+		header {
+			position: relative;
+			z-index: 1;
+		}
+
+		footer {
+			position: relative;
+			z-index: 1;
+		}
+	</style>	
+</head>
+<body>
+	<header>
+		<img src="header.svg" alt="Website Header" />
+		<nav id="my-nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="cv.html">CV</a></li>
+				<li><a href="Images.html">Images</a></li>
+				<li><a href="Writing.html">Writing</a></li>
+				<li><a href="Contact.html">Contact</a></li>
+				<li><a href="Teaching.html">Teaching</a></li>
+        <li><a href="Art.html">Teaching</a></li>
+			</ul>
+		</nav>
+	</header>
+		</a>
+	<main>
+		 
+	</main>
+
+	<footer>
+		<p>Copyright &copy; 2023</p>
+		<img src="surface.svg" alt="Footer Image">
+	</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.5/pdfobject.min.js"></script>
+  <script>
+    // Define an array of color codes
+    // Define an array of color codes
+    const colors = [
+      "#b8c4c6",
+      "#e6efc9",
+      "#abb2cc",
+      "#b6daf4",
+      "#e4cce1",
+      "#c0dcb4",
+      "#e2b9ae",
+      "#b8d0f1",
+      "#eed5e0",
+      "#d8e2af",
+      "#ebc6ac",
+      "#d7b6b7",
+      "#f6e8c6",
+      "#ebf1e6",
+      "#e7e4f0",
+      "#dbc6b1",
+      "#aecf9b",
+      "#f0cce1",
+      "#daddea",
+      "#f8e6e3",
+      "#f1e8ea",
+      "#f4d6e8",
+      "#dff0dc",
+      "#d1e9fe",
+      "#dae8f3",
+      "#eddeea",
+      "#e3e2ef",
+      "#d3dbed",
+      "#e9f1d2",
+      "#faf9d9",
+      "#ecd1f0",
+      "#eee1ec",
+      "#dee7f8",
+      "#eec7d5",
+      "#e3c3c6",
+      "#cad69b",
+      "#aeb1a4",
+      "#e6e0d8",
+      "#8fc0d1",
+      "#9c9fbc",
+      "#407973",
+      "#407973",
+      "#c7bea0",
+      "#b37c85",
+      "#91a9a9",
+      "#97bdca",
+      "#ecb681",
+      "#d8d8cc",
+      "#8ba1cc",
+      "#81a780",
+      "#b3d3ea",
+      "#c7cdd2",
+      "#b994c0",
+      "#e8f1c4",
+      "#915e88",
+      "#9a6f96",
+      "#f5cf98",
+      "#a49db0",
+      "#e7c5ae",
+      "#9cacbb"
+    ];
+
+    // Function to return a random color from the colors array
+    function getRandomColor() {
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+// Add event listener to all navigation links to change their background color on hover
+document.querySelectorAll('#my-nav ul li a').forEach(function(link) {
+  link.addEventListener('mouseenter', function() {
+    const randomColor = getRandomColor();
+    this.style.backgroundColor = randomColor;
+  });
+
+  link.addEventListener('mouseleave', function() {
+    // Reset the background color on mouse leave to transparent
+    this.style.backgroundColor = 'transparent';
+  });
+});
+
+  </script>	
+</body>
+</html>
