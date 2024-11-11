@@ -93,3 +93,24 @@ document.querySelectorAll('#my-nav .nav-link').forEach(function(link) {
   });
 });
 </script>
+
+
+<script>
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', function() {
+      const lightbox = document.createElement('div');
+      lightbox.classList.add('lightbox');
+      document.body.appendChild(lightbox);
+
+      const largeImage = document.createElement('img');
+      largeImage.src = img.src;
+      largeImage.classList.add('large-image');
+      lightbox.appendChild(largeImage);
+
+      lightbox.addEventListener('click', () => {
+        lightbox.remove();
+      });
+    });
+  });
+</script>
+
