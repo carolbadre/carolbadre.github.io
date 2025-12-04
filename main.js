@@ -1,124 +1,78 @@
-<!-- Link to the PDFObject library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.5/pdfobject.min.js"></script>
+// -------------------------------
+// PDF EMBED HANDLER
+// -------------------------------
+document.querySelectorAll('.pdf-grid a').forEach(function (link) {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
 
-<script>
-  // Embed PDFs in the page when the user clicks on a link with the class "pdf-grid a"
-  document.querySelectorAll('.pdf-grid a').forEach(function(link) {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
-      var pdfUrl = this.href;
-      PDFObject.embed(pdfUrl, "#pdf-viewer");
-      document.querySelector('#pdf-modal').classList.add('open');
-    });
+    const pdfUrl = this.href;
+    PDFObject.embed(pdfUrl, "#pdf-viewer");
+    document.querySelector('#pdf-modal').classList.add('open');
   });
+});
 
-  // Define an array of color codes
-  const colors = [
-    "#b8c4c6",
-    "#e6efc9",
-    "#abb2cc",
-    "#b6daf4",
-    "#e4cce1",
-    "#c0dcb4",
-    "#e2b9ae",
-    "#b8d0f1",
-    "#eed5e0",
-    "#d8e2af",
-    "#ebc6ac",
-    "#d7b6b7",
-    "#f6e8c6",
-    "#ebf1e6",
-    "#e7e4f0",
-    "#dbc6b1",
-    "#aecf9b",
-    "#f0cce1",
-    "#daddea",
-    "#f8e6e3",
-    "#f1e8ea",
-    "#f4d6e8",
-    "#dff0dc",
-    "#d1e9fe",
-    "#dae8f3",
-    "#eddeea",
-    "#e3e2ef",
-    "#d3dbed",
-    "#e9f1d2",
-    "#faf9d9",
-    "#ecd1f0",
-    "#eee1ec",
-    "#dee7f8",
-    "#eec7d5",
-    "#e3c3c6",
-    "#cad69b",
-    "#aeb1a4",
-    "#e6e0d8",
-    "#8fc0d1",
-    "#9c9fbc",
-    "#407973",
-    "#407973",
-    "#c7bea0",
-    "#b37c85",
-    "#91a9a9",
-    "#97bdca",
-    "#ecb681",
-    "#d8d8cc",
-    "#8ba1cc",
-    "#81a780",
-    "#b3d3ea",
-    "#c7cdd2",
-    "#b994c0",
-    "#e8f1c4",
-    "#915e88",
-    "#9a6f96",
-    "#f5cf98",
-    "#a49db0",
-    "#e7c5ae",
-    "#9cacbb"    ];
 
-// Function to return a random color from the colors array
+// -------------------------------
+// RANDOM HOVER COLORS FOR NAV
+// -------------------------------
+
+const colors = [
+  "#b8c4c6", "#e6efc9", "#abb2cc", "#b6daf4", "#e4cce1", "#c0dcb4",
+  "#e2b9ae", "#b8d0f1", "#eed5e0", "#d8e2af", "#ebc6ac", "#d7b6b7",
+  "#f6e8c6", "#ebf1e6", "#e7e4f0", "#dbc6b1", "#aecf9b", "#f0cce1",
+  "#daddea", "#f8e6e3", "#f1e8ea", "#f4d6e8", "#dff0dc", "#d1e9fe",
+  "#dae8f3", "#eddeea", "#e3e2ef", "#d3dbed", "#e9f1d2", "#faf9d9",
+  "#ecd1f0", "#eee1ec", "#dee7f8", "#eec7d5", "#e3c3c6", "#cad69b",
+  "#aeb1a4", "#e6e0d8", "#8fc0d1", "#9c9fbc", "#407973", "#407973",
+  "#c7bea0", "#b37c85", "#91a9a9", "#97bdca", "#ecb681", "#d8d8cc",
+  "#8ba1cc", "#81a780", "#b3d3ea", "#c7cdd2", "#b994c0", "#e8f1c4",
+  "#915e88", "#9a6f96", "#f5cf98", "#a49db0", "#e7c5ae", "#9cacbb"
+];
+
 function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-// Add event listener to all navigation links to change their background color on hover
-document.querySelectorAll('#my-nav .nav-link').forEach(function(link) {
-  link.addEventListener('mouseover', function() {
-    const randomColor = getRandomColor();
-    this.style.backgroundColor = randomColor;
+// Use real HTML structure: #my-nav ul li a
+document.querySelectorAll('#my-nav ul li a').forEach(function (link) {
+  link.addEventListener('mouseover', function () {
+    this.style.backgroundColor = getRandomColor();
   });
 
-  link.addEventListener('mouseleave', function() {
-    // Reset the background color on mouse leave
+  link.addEventListener('mouseleave', function () {
     this.style.backgroundColor = '';
   });
 });
-</script>
 
 
-<script>
-  document.querySelectorAll('.gallery-item img').forEach(img => {
-    img.addEventListener('click', function() {
-      const lightbox = document.createElement('div');
-      lightbox.classList.add('lightbox');
-      document.body.appendChild(lightbox);
+// -------------------------------
+// GALLERY LIGHTBOX
+// -------------------------------
+document.querySelectorAll('.gallery-item img').forEach(img => {
+  img.addEventListener('click', function () {
+    const lightbox = document.createElement('div');
+    lightbox.classList.add('lightbox');
 
-      const largeImage = document.createElement('img');
-      largeImage.src = img.src;
-      largeImage.classList.add('large-image');
-      lightbox.appendChild(largeImage);
+    const largeImage = document.createElement('img');
+    largeImage.src = img.src;
+    largeImage.classList.add('large-image');
 
-      lightbox.addEventListener('click', () => {
-        lightbox.remove();
-      });
-    });
+    lightbox.appendChild(largeImage);
+    document.body.appendChild(lightbox);
+
+    lightbox.addEventListener('click', () => lightbox.remove());
   });
+});
 
-<script>
+
+// -------------------------------
+// PASSWORD REVEAL BOX
+// -------------------------------
 function unlockPwBox(box) {
-  const correctPassword = "HunterCollege";  // <-- CHANGE THIS
+  const correctPassword = "HunterCollege"; // <-- Change if needed
   const userInput = prompt("Enter password:");
 
-  if (userInput === null) return; // if user presses cancel
+  if (userInput === null) return;
 
   const placeholder = box.querySelector(".pw-placeholder");
   const secret = box.querySelector(".pw-secret");
@@ -130,11 +84,6 @@ function unlockPwBox(box) {
     alert("Incorrect password.");
   }
 }
-</script>
 
-
-
-
-</script>
-
-
+// Make function globally available
+window.unlockPwBox = unlockPwBox;
