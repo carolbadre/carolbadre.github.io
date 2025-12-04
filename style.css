@@ -175,3 +175,22 @@ h2 {
     max-width: 90%;
     max-height: 90%;
 }
+
+<style>
+  .pw-box {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    margin: 20px 0;
+  }
+
+  .pw-secret {
+    display: none;
+    margin-top: 10px;
+    white-space: pre-wrap;
+  }
+</style>
