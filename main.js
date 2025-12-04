@@ -64,7 +64,6 @@ document.querySelectorAll('.gallery-item img').forEach(img => {
   });
 });
 
-
 // -------------------------------
 // PASSWORD REVEAL BOX
 // -------------------------------
@@ -72,7 +71,7 @@ function unlockPwBox(box) {
   const correctPassword = "HunterCollege"; // <-- Change if needed
   const userInput = prompt("Enter password:");
 
-  if (userInput === null) return;
+  if (userInput === null) return; // user cancelled
 
   const placeholder = box.querySelector(".pw-placeholder");
   const secret = box.querySelector(".pw-secret");
@@ -80,6 +79,10 @@ function unlockPwBox(box) {
   if (userInput === correctPassword) {
     placeholder.style.display = "none";
     secret.style.display = "block";
+
+    // ✅ After unlocking, disable the box’s click behavior
+    // so clicking the link doesn’t re-trigger the password prompt.
+    box.onclick = null;
   } else {
     alert("Incorrect password.");
   }
