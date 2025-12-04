@@ -24,7 +24,7 @@
     background-image: url('Jerome_writing.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 90%;  /* Adjust the value as needed */
+    background-size: 90%;
     opacity: 0.3;
     z-index: -1;
   }
@@ -34,16 +34,13 @@
     z-index: 1;
   }
 
-
-	
 footer {
     width: 100%;
     position: relative;
     z-index: 1;
-    text-align: center; /* Center text in the footer */
-    padding: 20px 0; /* Add vertical padding */
-    background-color: #CDE0CD; /* Optional background color */
-    
+    text-align: center;
+    padding: 20px 0;
+    background-color: #CDE0CD;
 }
 </style>
 
@@ -66,127 +63,95 @@ footer {
   </header>
 
   <main>
-    <div class="background-image"></div> <!-- Container for the background image -->
+    <div class="background-image"></div>
 
     <h2>Resources</h2>
     <ul>
       <ul style="padding-left: 20px;">
       <li><a href="lecture_notes_DATA_fall.pdf">Lecture notes data</a></li>
       <li><a href="student_notes_DATA_fall.pdf">Student notes data</a></li>
-	  <li><a href="lecture_notes_statistics_fall.pdf">Lecture notes statistics</a></li>
-      <li><a href="student_notes_statistics_fall.pdf">Student notes statistics</a></li>    
-	  <li><a href="lecture_notes_probability_fall.pdf">Lecture notes probability</a></li>
-      <li><a href="student_notes_probability_fall.pdf">Student notes probability</a></li> 
-	  <li><a href="lecture_notes_counting_fall.pdf">Lecture notes counting</a></li>
-      <li><a href="student_notes_counting_fall.pdf">Student notes counting</a></li>		  
-	  <li><a href="lecture_notes_growth_fall.pdf">Lecture notes growth</a></li>
-      <li><a href="student_notes_growth_fall.pdf">Student notes growth</a></li>		  		  
-	  <li><a href="lecture_notes_FINANCE_fall.pdf">Lecture notes finance</a></li>
-      <li><a href="student_notes_FINANCE_fall.pdf">Student notes finance</a></li>		  		  
-	  <li><a href="lecture_notes_VOTING_fall.pdf">Lecture notes voting</a></li>
-      <li><a href="student_notes_VOTING_fall.pdf">Student notes voting</a></li>		  		  
+      <li><a href="lecture_notes_statistics_fall.pdf">Lecture notes statistics</a></li>
+      <li><a href="student_notes_statistics_fall.pdf">Student notes statistics</a></li>
+      <li><a href="lecture_notes_probability_fall.pdf">Lecture notes probability</a></li>
+      <li><a href="student_notes_probability_fall.pdf">Student notes probability</a></li>
+      <li><a href="lecture_notes_counting_fall.pdf">Lecture notes counting</a></li>
+      <li><a href="student_notes_counting_fall.pdf">Student notes counting</a></li>
+      <li><a href="lecture_notes_growth_fall.pdf">Lecture notes growth</a></li>
+      <li><a href="student_notes_growth_fall.pdf">Student notes growth</a></li>
+      <li><a href="lecture_notes_FINANCE_fall.pdf">Lecture notes finance</a></li>
+      <li><a href="student_notes_FINANCE_fall.pdf">Student notes finance</a></li>
+      <li><a href="lecture_notes_VOTING_fall.pdf">Lecture notes voting</a></li>
+      <li><a href="student_notes_VOTING_fall.pdf">Student notes voting</a></li>
 
 
+      <!-- ✨ FIXED: wrapped the box in an <li> and hid the secret text -->
+      <li>
+        <div class="pw-box" onclick="unlockPwBox(this)">
+          <span class="pw-placeholder">Click here</span>
+          <div class="pw-secret" style="display:none;">
+            https://cuny547-my.sharepoint.com/:v:/g/personal/cbadre_gradcenter_cuny_edu/ETvt2JgFKwJKmqhyskvGJL0BWPwwb28W7c6LHJz6gu1BwA
+          </div>
+        </div>
+      </li>
+      <!-- end fix -->
 
-<div class="pw-box" onclick="unlockPwBox(this)">
-  <span class="pw-placeholder">Click here</span>
-  <div class="pw-secret">https://cuny547-my.sharepoint.com/:v:/g/personal/cbadre_gradcenter_cuny_edu/ETvt2JgFKwJKmqhyskvGJL0BWPwwb28W7c6LHJz6gu1BwA</div>
-</div>
-
-
-		  
-          </ul>
+      </ul>
 
   
-	<footer>
-		<p>Copyright &copy; 2025</p>
-		<img src="surface.svg" alt="Footer Image">
-	</footer>
+    <footer>
+      <p>Copyright &copy; 2025</p>
+      <img src="surface.svg" alt="Footer Image">
+    </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.5/pdfobject.min.js"></script>
+
   <script>
-    // Define an array of color codes
-    // Define an array of color codes
     const colors = [
-      "#b8c4c6",
-      "#e6efc9",
-      "#abb2cc",
-      "#b6daf4",
-      "#e4cce1",
-      "#c0dcb4",
-      "#e2b9ae",
-      "#b8d0f1",
-      "#eed5e0",
-      "#d8e2af",
-      "#ebc6ac",
-      "#d7b6b7",
-      "#f6e8c6",
-      "#ebf1e6",
-      "#e7e4f0",
-      "#dbc6b1",
-      "#aecf9b",
-      "#f0cce1",
-      "#daddea",
-      "#f8e6e3",
-      "#f1e8ea",
-      "#f4d6e8",
-      "#dff0dc",
-      "#d1e9fe",
-      "#dae8f3",
-      "#eddeea",
-      "#e3e2ef",
-      "#d3dbed",
-      "#e9f1d2",
-      "#faf9d9",
-      "#ecd1f0",
-      "#eee1ec",
-      "#dee7f8",
-      "#eec7d5",
-      "#e3c3c6",
-      "#cad69b",
-      "#aeb1a4",
-      "#e6e0d8",
-      "#8fc0d1",
-      "#9c9fbc",
-      "#407973",
-      "#407973",
-      "#c7bea0",
-      "#b37c85",
-      "#91a9a9",
-      "#97bdca",
-      "#ecb681",
-      "#d8d8cc",
-      "#8ba1cc",
-      "#81a780",
-      "#b3d3ea",
-      "#c7cdd2",
-      "#b994c0",
-      "#e8f1c4",
-      "#915e88",
-      "#9a6f96",
-      "#f5cf98",
-      "#a49db0",
-      "#e7c5ae",
-      "#9cacbb"
+      "#b8c4c6","#e6efc9","#abb2cc","#b6daf4","#e4cce1","#c0dcb4","#e2b9ae",
+      "#b8d0f1","#eed5e0","#d8e2af","#ebc6ac","#d7b6b7","#f6e8c6","#ebf1e6",
+      "#e7e4f0","#dbc6b1","#aecf9b","#f0cce1","#daddea","#f8e6e3","#f1e8ea",
+      "#f4d6e8","#dff0dc","#d1e9fe","#dae8f3","#eddeea","#e3e2ef","#d3dbed",
+      "#e9f1d2","#faf9d9","#ecd1f0","#eee1ec","#dee7f8","#eec7d5","#e3c3c6",
+      "#cad69b","#aeb1a4","#e6e0d8","#8fc0d1","#9c9fbc","#407973","#407973",
+      "#c7bea0","#b37c85","#91a9a9","#97bdca","#ecb681","#d8d8cc","#8ba1cc",
+      "#81a780","#b3d3ea","#c7cdd2","#b994c0","#e8f1c4","#915e88","#9a6f96",
+      "#f5cf98","#a49db0","#e7c5ae","#9cacbb"
     ];
 
-    // Function to return a random color from the colors array
     function getRandomColor() {
       return colors[Math.floor(Math.random() * colors.length)];
     }
 
-// Add event listener to all navigation links to change their background color on hover
-document.querySelectorAll('#my-nav ul li a').forEach(function(link) {
-  link.addEventListener('mouseenter', function() {
-    const randomColor = getRandomColor();
-    this.style.backgroundColor = randomColor;
-  });
+    document.querySelectorAll('#my-nav ul li a').forEach(function(link) {
+      link.addEventListener('mouseenter', function() {
+        this.style.backgroundColor = getRandomColor();
+      });
 
-  link.addEventListener('mouseleave', function() {
-    // Reset the background color on mouse leave to transparent
-    this.style.backgroundColor = 'transparent';
-  });
-});
+      link.addEventListener('mouseleave', function() {
+        this.style.backgroundColor = 'transparent';
+      });
+    });
+  </script>
 
-  </script>	
+  <!-- ✨ FIXED: Added password function -->
+  <script>
+    function unlockPwBox(box) {
+      const correctPassword = "mypassword"; // change this
+      const entered = prompt("Enter password:");
+
+      if (entered === null) return;
+
+      const placeholder = box.querySelector(".pw-placeholder");
+      const secret = box.querySelector(".pw-secret");
+
+      if (entered === correctPassword) {
+        placeholder.style.display = "none";
+        secret.style.display = "block";
+      } else {
+        alert("Incorrect password.");
+      }
+    }
+  </script>
+
 </body>
 </html>
