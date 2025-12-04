@@ -112,5 +112,29 @@ document.querySelectorAll('#my-nav .nav-link').forEach(function(link) {
       });
     });
   });
+
+<script>
+function unlockPwBox(box) {
+  const correctPassword = "HunterCollege";  // <-- CHANGE THIS
+  const userInput = prompt("Enter password:");
+
+  if (userInput === null) return; // if user presses cancel
+
+  const placeholder = box.querySelector(".pw-placeholder");
+  const secret = box.querySelector(".pw-secret");
+
+  if (userInput === correctPassword) {
+    placeholder.style.display = "none";
+    secret.style.display = "block";
+  } else {
+    alert("Incorrect password.");
+  }
+}
 </script>
+
+
+
+
+</script>
+
 
