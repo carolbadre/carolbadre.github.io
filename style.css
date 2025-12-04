@@ -46,16 +46,16 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   padding: 0.5em;
-  background-color: var(--hover-color); /* Default background color for the links */
+  background-color: var(--hover-color);
 }
 
 :root {
-  --random-color: hsla(0, 0%, 80%, 1); /* Set a default random color */
+  --random-color: hsla(0, 0%, 80%, 1);
 }
 
 nav a:hover {
-  --random-color: hsla(360 * var(--hue), 60%, 70%, 1); /* Set a new random color on hover */
-  background-color: var(--random-color); /* Use the new random color as the hover background color */
+  --random-color: hsla(360 * var(--hue), 60%, 70%, 1);
+  background-color: var(--random-color);
 }
 
 main {
@@ -79,7 +79,7 @@ footer {
   text-align: center;
   border-top: 2px solid #ddd;
   position: relative;
-  height: 80px; /* Set the height of the footer to accommodate the image */
+  height: 80px;
 }
 
 footer p {
@@ -87,11 +87,12 @@ footer p {
 }
 
 footer img {
-  height: 80px; /* Set the height of the image */
-  width: auto; /* Allow the width to adjust proportionally to the height */
-  margin: 5px; /* Add some margin to the image */
+  height: 80px;
+  width: auto;
+  margin: 5px;
 }
 
+/* Responsive navigation */
 @media only screen and (max-width: 600px) {
   nav ul {
     flex-direction: column;
@@ -100,7 +101,7 @@ footer img {
 
   nav li {
     margin: 0.5em 0;
-    text-align: center; /* Added to center the text in mobile view */
+    text-align: center;
   }
 
   nav li:last-child {
@@ -108,14 +109,14 @@ footer img {
   }
 
   footer img {
-    height: 60px; /* Decreased the height of the image for mobile view */
+    height: 60px;
   }
 }
 
 @media only screen and (min-width: 601px) {
   nav li {
     margin: 0 1em;
-    text-align: left; /* Reset to default alignment */
+    text-align: left;
   }
 
   nav li:last-child {
@@ -123,74 +124,72 @@ footer img {
   }
 }
 
-
+/* Gallery Styles */
 #portfolio-gallery {
-    width: 100%;
-    padding: 20px;
+  width: 100%;
+  padding: 20px;
 }
 
 h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .gallery-item {
-    text-align: center;
+  text-align: center;
 }
 
 .gallery-item img.thumbnail {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .gallery-item img.thumbnail:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-
-
 .lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
 
 .lightbox img.large-image {
-    max-width: 90%;
-    max-height: 90%;
+  max-width: 90%;
+  max-height: 90%;
 }
 
-<style>
-  .pw-box {
-    width: 300px;
-    padding: 20px;
-    border: 2px solid #333;
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: center;
-    user-select: none;
-    margin: 20px 0;
-  }
+/* Password Box */
+.pw-box {
+  width: 300px;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  margin: 20px 0;
+  background-color: #fff;
+}
 
-  .pw-secret {
-    display: none;
-    margin-top: 10px;
-    white-space: pre-wrap;
-  }
-</style>
+.pw-secret {
+  display: none;
+  margin-top: 10px;
+  white-space: pre-wrap;
+}
