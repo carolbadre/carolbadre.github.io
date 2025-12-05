@@ -33,7 +33,6 @@ function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-// Use real HTML structure: #my-nav ul li a
 document.querySelectorAll('#my-nav ul li a').forEach(function (link) {
   link.addEventListener('mouseover', function () {
     this.style.backgroundColor = getRandomColor();
@@ -64,14 +63,18 @@ document.querySelectorAll('.gallery-item img').forEach(img => {
   });
 });
 
+
 // -------------------------------
-// PASSWORD REVEAL BOX
+// PASSWORD REVEAL BOX  (with Base64 obfuscation)
 // -------------------------------
 function unlockPwBox(box) {
-  const correctPassword = "HunterCollege"; // <-- Change if needed
-  const userInput = prompt("Enter password:");
 
-  if (userInput === null) return; // user cancelled
+  // 🔒 Password stored in Base64 (obscured but not secure)
+  // "HunterCollege" → "SHVudGVyQ29sbGVnZQ=="
+  const correctPassword = atob("SHVudGVyQ29sbGVnZQ==");
+
+  const userInput = prompt("Enter password:");
+  if (userInput === null) return;
 
   const placeholder = box.querySelector(".pw-placeholder");
   const secret = box.querySelector(".pw-secret");
@@ -80,13 +83,12 @@ function unlockPwBox(box) {
     placeholder.style.display = "none";
     secret.style.display = "block";
 
-    // ✅ After unlocking, disable the box’s click behavior
-    // so clicking the link doesn’t re-trigger the password prompt.
+    // Prevent further prompts once unlocked
     box.onclick = null;
   } else {
     alert("Incorrect password.");
   }
 }
 
-// Make function globally available
+// Make it available globally
 window.unlockPwBox = unlockPwBox;
