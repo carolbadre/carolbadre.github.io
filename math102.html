@@ -191,25 +191,13 @@ document.querySelectorAll('#my-nav ul li a').forEach(function(link) {
 });
   </script>
 
-  <pword function -->
-  <script>
-    function unlockPwBox(box) {
-      const correctPassword = "HunterCollege"; // change this
-      const entered = prompt("Enter password:");
+ <div class="pw-box" onclick="unlockPwBox(this)">
+  <span class="pw-placeholder">Click here</span>
 
-      if (entered === null) return;
-
-      const placeholder = box.querySelector(".pw-placeholder");
-      const secret = box.querySelector(".pw-secret");
-
-      if (entered === correctPassword) {
-        placeholder.style.display = "none";
-        secret.style.display = "block";
-      } else {
-        alert("Incorrect password.");
-      }
-    }
-  </script>
+  <div class="pw-secret" style="display:none;">
+    <a href="YOUR-LINK-HERE" target="_blank">video on compound interest and annuity</a>
+  </div>
+</div>
 
 </body>
 </html>
