@@ -65,39 +65,34 @@ document.querySelectorAll('.gallery-item img').forEach(img => {
 
 
 // -------------------------------
-// PASSWORD REVEAL BOX  (with Base64 obfuscation)
-// -------------------------------
 <script>
-function unlockPwBox(box) {
+async function sha256(message) {
+  const msgBuffer = new TextEncoder().encode(message);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+}
 
-  // Encoded numeric representation of the password
-  const encoded = [
-    95, 98, 121, 99, 114, 101,
-    84, 120, 123, 123, 114, 112, 114
-  ];
+async function unlockPwBox(box) {
 
-  // Decode at runtime (XOR 23 restores original ASCII)
-  const correctPassword = encoded
-    .map(n => String.fromCharCode(n ^ 23))
-    .join("");
+  const correctHash = "PASTE_YOUR_REAL_HASH_HERE";
 
   const userInput = prompt("Enter password:");
-  if (userInput === null) return;
+  if (!userInput) return;
+
+  const userHash = await sha256(userInput);
 
   const placeholder = box.querySelector(".pw-placeholder");
   const secret = box.querySelector(".pw-secret");
 
-  if (userInput === correctPassword) {
+  if (userHash === correctHash) {
     placeholder.style.display = "none";
     secret.style.display = "block";
-
-    // Prevent further prompts once unlocked
     box.onclick = null;
   } else {
     alert("Incorrect password.");
   }
 }
 
-// Make it available globally
 window.unlockPwBox = unlockPwBox;
 </script>
