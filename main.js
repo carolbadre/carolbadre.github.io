@@ -75,7 +75,7 @@ async function sha256(message) {
 }
 
 async function unlockPwBox(box) {
-  const correctHash = "7dc314b99b7f0c219c17d689ec468c89b15b7b061fb9b3c1090a66cbf148f37d";
+  const correctHash = "078291c6fb7d51552c35a659c4f4b92191566dca391446398151dfcae1defd68";
 
   const userInput = prompt("Enter password:");
   if (!userInput) return;
@@ -98,3 +98,4 @@ async function unlockPwBox(box) {
 }
 
 window.unlockPwBox = unlockPwBox;
+
