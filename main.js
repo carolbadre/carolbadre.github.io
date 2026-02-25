@@ -66,6 +66,7 @@ document.querySelectorAll('.gallery-item img').forEach(img => {
 
 // -------------------------------
 
+// -------------------------------
 async function sha256(message) {
   const msgBuffer = new TextEncoder().encode(message);
   const hashBuffer = await crypto.subtle.digest("SHA-256", msgBuffer);
@@ -74,13 +75,15 @@ async function sha256(message) {
 }
 
 async function unlockPwBox(box) {
-
   const correctHash = "7dc314b99b7f0c219c17d689ec468c89b15b7b061fb9b3c1090a66cbf148f37d";
 
   const userInput = prompt("Enter password:");
   if (!userInput) return;
 
-  const userHash = await sha256(userInput);
+  // Normalize input: remove extra spaces
+  const normalizedInput = userInput.trim();
+
+  const userHash = await sha256(normalizedInput);
 
   const placeholder = box.querySelector(".pw-placeholder");
   const secret = box.querySelector(".pw-secret");
@@ -95,5 +98,3 @@ async function unlockPwBox(box) {
 }
 
 window.unlockPwBox = unlockPwBox;
-
-
