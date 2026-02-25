@@ -67,11 +67,19 @@ document.querySelectorAll('.gallery-item img').forEach(img => {
 // -------------------------------
 // PASSWORD REVEAL BOX  (with Base64 obfuscation)
 // -------------------------------
+<script>
 function unlockPwBox(box) {
 
-  // 🔒 Password stored in Base64 (obscured but not secure)
-  // "HunterCollege" → "SHVudGVyQ29sbGVnZQ=="
-  const correctPassword = atob("SHVudGVyQ29sbGVnZQ==");
+  // Encoded numeric representation of the password
+  const encoded = [
+    95, 98, 121, 99, 114, 101,
+    84, 120, 123, 123, 114, 112, 114
+  ];
+
+  // Decode at runtime (XOR 23 restores original ASCII)
+  const correctPassword = encoded
+    .map(n => String.fromCharCode(n ^ 23))
+    .join("");
 
   const userInput = prompt("Enter password:");
   if (userInput === null) return;
@@ -92,3 +100,4 @@ function unlockPwBox(box) {
 
 // Make it available globally
 window.unlockPwBox = unlockPwBox;
+</script>
