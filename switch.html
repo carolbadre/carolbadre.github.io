@@ -360,7 +360,7 @@
     const dir = t[2] > single ? 'slower' : 'faster';
     const e = errors[2];
     document.getElementById('insight').textContent =
-      `With search difficulty held constant, alternating took ${t[2].toFixed(2)}s vs ${single.toFixed(2)}s for both single-task rounds combined — about ${pct}% ${dir}${e > 0 ? `, with ${e} error${e > 1 ? 's' : ''}` : ''}. Any gap is now purely the cost of switching rules, not searching a bigger grid.`;
+      `With search difficulty held constant, alternating took ${t[2].toFixed(2)}s vs ${single.toFixed(2)}s for both single-task rounds combined — about ${pct}% ${dir}${e > 0 ? `, with ${e} error${e > 1 ? 's' : ''}` : ''}. `;
   }
 
   document.getElementById('start-btn').onclick = () => {
