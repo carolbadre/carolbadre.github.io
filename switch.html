@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task switching demo</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f5f3;
+      color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 0.5px solid rgba(0,0,0,0.12);
+      padding: 2rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .phase-indicator {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .pip {
+      width: 28px;
+      height: 4px;
+      border-radius: 2px;
+      background: #e0e0e0;
+    }
+    .pip.active { background: #378ADD; }
+    .pip.done   { background: #639922; }
+
+    .phase-label {
+      font-size: 13px;
+      color: #888;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .prompt {
+      font-size: 22px;
+      font-weight: 500;
+      text-align: center;
+      color: #1a1a1a;
+      min-height: 32px;
+    }
+
+    #msg {
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+      margin-top: 6px;
+      min-height: 20px;
+    }
+
+    #btn-area {
+      min-height: 148px;
+      margin: 1.5rem 0;
+    }
+
+    .row-label {
+      font-size: 11px;
+      color: #aaa;
+      text-align: center;
+      margin-bottom: 4px;
+      letter-spacing: 0.04em;
+      text-transform: lowercase;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+
+    .row-divider {
+      border: none;
+      border-top: 0.5px solid #e8e8e8;
+      margin: 4px 0 10px;
+    }
+
+    .target-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      border: 0.5px solid #ccc;
+      background: #fff;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      color: #1a1a1a;
+      transition: transform 0.08s;
+    }
+    .target-btn:hover { background: #f5f5f3; }
+    .target-btn.correct { background: #EAF3DE; color: #27500A; border-color: #97C459; }
+    .target-btn.wrong   { background: #FCEBEB; color: #791F1F; border-color: #F09595; }
+    .target-btn.next    { background: #E6F1FB; color: #0C447C; border-color: #85B7EB; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 1.5rem;
+    }
+
+    .stat {
+      background: #f5f5f3;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+    .stat-label { font-size: 12px; color: #888; margin-bottom: 4px; }
+    .stat-val   { font-size: 22px; font-weight: 500; color: #1a1a1a; }
+
+    .results-box {
+      border: 0.5px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .results-title {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .result-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .result-name { font-size: 13px; color: #888; width: 100px; flex-shrink: 0; }
+    .result-time { font-size: 14px; font-weight: 500; width: 52px; flex-shrink: 0; color: #1a1a1a; }
+    .bar-wrap    { flex: 1; height: 10px; background: #f0f0f0; border-radius: 5px; overflow: hidden; }
+    .bar         { height: 100%; border-radius: 5px; }
+
+    #insight {
+      font-size: 13px;
+      color: #666;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    #start-btn {
+      display: block;
+      margin: 1rem auto 0;
+      padding: 10px 28px;
+      border-radius: 8px;
+      border: 0.5px solid #ccc;
+      background: #fff;
+      font-size: 15px;
+      cursor: pointer;
+      color: #1a1a1a;
+    }
+    #start-btn:hover { background: #f5f5f3; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="phase-indicator">
+    <div class="pip" id="pip0"></div>
+    <div class="pip" id="pip1"></div>
+    <div class="pip" id="pip2"></div>
+  </div>
+
+  <div class="phase-label" id="phase-label">Ready to start</div>
+  <div class="prompt" id="prompt">Click start to begin</div>
+  <div id="msg"></div>
+
+  <div id="btn-area"></div>
+
+  <div class="stat-row">
+    <div class="stat"><div class="stat-label">Numbers only</div><div class="stat-val" id="t0">—</div></div>
+    <div class="stat"><div class="stat-label">Letters only</div><div class="stat-val" id="t1">—</div></div>
+    <div class="stat"><div class="stat-label">Alternating</div><div class="stat-val" id="t2">—</div></div>
+  </div>
+
+  <div id="results-area" style="display:none;" class="results-box">
+    <p class="results-title">Your results</p>
+    <div id="bars"></div>
+    <p id="insight"></p>
+  </div>
+
+  <button id="start-btn">Start</button>
+</div>
+
+<script>
+  const NUMS = ['1','2','3','4','5','6','7','8','9','10'];
+  const LETS = ['A','B','C','D','E','F','G','H','I','J'];
+  const ALT  = ['1','A','2','B','3','C','4','D','5','E','6','F','7','G','8','H','9','I','10','J'];
+
+  const PHASES = [
+    { label: 'Round 1 — click numbers 1 to 10', sequence: NUMS, barColor: '#378ADD' },
+    { label: 'Round 2 — click letters A to J',  sequence: LETS, barColor: '#639922' },
+    { label: 'Round 3 — alternate: 1, A, 2, B...', sequence: ALT, barColor: '#D85A30' }
+  ];
+
+  const NUM_POOL = ['1','2','3','4','5','6','7','8','9','10','11','12'];
+  const LET_POOL = ['A','B','C','D','E','F','G','H','I','J','K','L'];
+
+  let phase = -1, idx = 0, startTime = 0;
+  let times = [null, null, null], errors = [0, 0, 0];
+
+  function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+  function isNum(v) { return !isNaN(parseInt(v)); }
+
+  function makeBtn(val, target) {
+    const btn = document.createElement('button');
+    btn.className = 'target-btn' + (val === target ? ' next' : '');
+    btn.textContent = val;
+    btn.onclick = () => handleClick(val, btn);
+    return btn;
+  }
+
+  function renderButtons() {
+    const area = document.getElementById('btn-area');
+    area.innerHTML = '';
+    const target = PHASES[phase].sequence[idx];
+
+    if (phase < 2) {
+      const pool = phase === 0 ? [...NUM_POOL] : [...LET_POOL];
+      let shuffled = shuffle(pool);
+      if (!shuffled.includes(target)) shuffled[0] = target;
+      shuffled = shuffle(shuffled);
+      const row = document.createElement('div');
+      row.className = 'btn-row';
+      shuffled.forEach(val => row.appendChild(makeBtn(val, target)));
+      area.appendChild(row);
+    } else {
+      let numPool = shuffle([...NUM_POOL]);
+      let letPool = shuffle([...LET_POOL]);
+      if (isNum(target) && !numPool.includes(target)) numPool[0] = target;
+      if (!isNum(target) && !letPool.includes(target)) letPool[0] = target;
+      numPool = shuffle(numPool);
+      letPool = shuffle(letPool);
+
+      const numLabel = document.createElement('div');
+      numLabel.className = 'row-label';
+      numLabel.textContent = 'numbers';
+
+      const numRow = document.createElement('div');
+      numRow.className = 'btn-row';
+      numPool.forEach(val => numRow.appendChild(makeBtn(val, target)));
+
+      const divider = document.createElement('hr');
+      divider.className = 'row-divider';
+
+      const letLabel = document.createElement('div');
+      letLabel.className = 'row-label';
+      letLabel.textContent = 'letters';
+
+      const letRow = document.createElement('div');
+      letRow.className = 'btn-row';
+      letPool.forEach(val => letRow.appendChild(makeBtn(val, target)));
+
+      area.appendChild(numLabel);
+      area.appendChild(numRow);
+      area.appendChild(divider);
+      area.appendChild(letLabel);
+      area.appendChild(letRow);
+    }
+  }
+
+  function handleClick(val, btn) {
+    const target = PHASES[phase].sequence[idx];
+    if (val === target) {
+      btn.classList.remove('next');
+      btn.classList.add('correct');
+      idx++;
+      if (idx >= PHASES[phase].sequence.length) {
+        times[phase] = ((Date.now() - startTime) / 1000).toFixed(2);
+        document.getElementById('t' + phase).textContent = times[phase] + 's';
+        finishPhase();
+      } else {
+        document.getElementById('prompt').textContent = 'Click: ' + PHASES[phase].sequence[idx];
+        setTimeout(renderButtons, 120);
+      }
+    } else {
+      errors[phase]++;
+      btn.classList.add('wrong');
+      document.getElementById('msg').textContent = 'Nope — find ' + target;
+      setTimeout(() => { btn.classList.remove('wrong'); document.getElementById('msg').textContent = ''; }, 600);
+    }
+  }
+
+  function finishPhase() {
+    document.getElementById('pip' + phase).classList.remove('active');
+    document.getElementById('pip' + phase).classList.add('done');
+    document.getElementById('btn-area').innerHTML = '';
+    if (phase < 2) {
+      document.getElementById('prompt').textContent = 'Nice! Ready for the next round?';
+      const sb = document.getElementById('start-btn');
+      sb.textContent = phase === 0 ? 'Start round 2 (letters)' : 'Start round 3 (alternating)';
+      sb.style.display = 'block';
+    } else {
+      showResults();
+      document.getElementById('start-btn').style.display = 'none';
+      document.getElementById('prompt').textContent = 'All done!';
+      document.getElementById('phase-label').textContent = 'See your results below';
+    }
+  }
+
+  function startPhase(n) {
+    phase = n; idx = 0; errors[phase] = 0;
+    document.getElementById('pip' + phase).classList.add('active');
+    document.getElementById('phase-label').textContent = PHASES[phase].label;
+    document.getElementById('prompt').textContent = 'Click: ' + PHASES[phase].sequence[0];
+    document.getElementById('start-btn').style.display = 'none';
+    document.getElementById('msg').textContent = '';
+    startTime = Date.now();
+    renderButtons();
+  }
+
+  function showResults() {
+    document.getElementById('results-area').style.display = 'block';
+    const t = times.map(Number);
+    const maxT = Math.max(...t);
+    const colors = ['#378ADD', '#639922', '#D85A30'];
+    const names  = ['Numbers only', 'Letters only', 'Alternating'];
+    let html = '';
+    names.forEach((n, i) => {
+      const pct = Math.round((t[i] / maxT) * 100);
+      html += `<div class="result-row">
+        <span class="result-name">${n}</span>
+        <span class="result-time">${t[i].toFixed(2)}s</span>
+        <div class="bar-wrap"><div class="bar" style="width:${pct}%;background:${colors[i]};"></div></div>
+      </div>`;
+    });
+    document.getElementById('bars').innerHTML = html;
+    const single = t[0] + t[1];
+    const pct = Math.abs(Math.round(((t[2] - single) / single) * 100));
+    const dir = t[2] > single ? 'slower' : 'faster';
+    const e = errors[2];
+    document.getElementById('insight').textContent =
+      `With search difficulty held constant, alternating took ${t[2].toFixed(2)}s vs ${single.toFixed(2)}s for both single-task rounds combined — about ${pct}% ${dir}${e > 0 ? `, with ${e} error${e > 1 ? 's' : ''}` : ''}. Any gap is now purely the cost of switching rules, not searching a bigger grid.`;
+  }
+
+  document.getElementById('start-btn').onclick = () => {
+    if (phase < 0) startPhase(0);
+    else if (phase === 0) startPhase(1);
+    else if (phase === 1) startPhase(2);
+  };
+</script>
+</body>
+</html>
